@@ -6,9 +6,9 @@
       typeof HTMLDialogElement === "undefined" ||
       typeof HTMLDialogElement.prototype.showModal !== "function") return;
 
-  const pdfUrl = new URL("assets/Archana-Sheshachala-CV.pdf", document.baseURI);
+  const pdfUrl = new URL("assets/Archana-Sheshachala-CV.pdf?v=de7d7bfb16", document.baseURI);
   const pageUrls = [1, 2].map(page =>
-    new URL(`assets/cv-page-${page}.png`, document.baseURI));
+    new URL(`assets/cv-page-${page}.png?v=de7d7bfb16`, document.baseURI));
   if ([pdfUrl, ...pageUrls].some(url => url.origin !== location.origin)) return;
 
   let dialog;

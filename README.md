@@ -29,11 +29,11 @@ GitHub's current instructions: https://docs.github.com/en/pages/quickstart
 
 The Carbon Energy article has no verified DOI in the supplied material and is labelled **Accepted** with “link to follow.” The Materials Advances article retains the **Accepted** status from the supplied record and links to its DOI. Chemical Communications publication was verified against the locally supplied published article. Keep these statuses current as publisher records change.
 
-The displayed efficiency results describe the relevant individual studies and should retain their device/test context. The site does not include unpublished manuscript details, patent details, a private address, or a telephone number. The attached CV is the user’s existing LinkedIn-oriented version.
+The displayed efficiency results describe the relevant individual studies and should retain their device/test context. Research summaries exclude unpublished manuscript and patent details. The attached CV is an unchanged copy of the user's selected `After defence/India/Archana S CV_I.pdf`, including the contact information in that original file. Its preview pages are rendered directly from the same PDF.
 
 ## Local preview and packaging
 
-From the source project, run `node prepare.mjs` to copy only the public website files into `dist/`. Serve `dist/` using a static web server. No dependency installation is required. Content hashes on script/style URLs prevent older browser caches from mixing incompatible revisions.
+From the source project, run `node prepare.mjs` to copy only the public website files into `dist/`. Serve `dist/` using a static web server. No dependency installation is required. Content hashes on script/style URLs prevent older browser caches from mixing incompatible revisions. The build also versions PDF links and CV preview images together from the selected PDF's content hash, so a replacement does not show an older cached CV.
 
 The publishing archive contains the contents of `dist/`. Source context, research documents, and review screenshots are kept outside it.
 
