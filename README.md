@@ -1,6 +1,6 @@
 # Archana Sheshachala — research profile
 
-A static personal academic website with an interactive halftone portrait, linked research explanations, a coloured click-open chemistry walkthrough, expandable citations, CV viewing/download, and professional contact links.
+A static personal academic website with a clear original portrait and optional halftone effect, linked research explanations, a coloured click-open chemistry walkthrough, expandable citations, an on-page CV preview/download, and professional contact links.
 
 Website address: https://archanasheshachala-source.github.io/
 
@@ -21,6 +21,7 @@ GitHub's current instructions: https://docs.github.com/en/pages/quickstart
 - Introduction, contact details, background, and publication list: `index.html`.
 - Interactive research explanations, mechanism emphasis, and evidence tables: `research.js`.
 - Replace the CV at `assets/Archana-Sheshachala-CV.pdf` to keep the download URL stable.
+- Regenerate `assets/cv-page-1.png` and `assets/cv-page-2.png` from that same PDF when replacing it; the preview uses those pages. Preview behaviour and layout live in `cv-preview.js` and `cv-preview.css`.
 - Portrait source: `assets/archana.png`. The halftone is computed locally in the visitor's browser; the photo is not sent to a service.
 - Appearance and responsive layout: `style.css`.
 - Click-open chemistry scenes and their scientific copy: `chemistry-scenes.js`.
@@ -38,7 +39,8 @@ The publishing archive contains the contents of `dist/`. Source context, researc
 
 ## Interaction and accessibility
 
-- Move over the portrait to gently displace its dots; click, tap, or activate it with the keyboard to show the original photo.
+- The original colour portrait is the default. “Try halftone” enables the optional dot treatment; “Show photo” restores the original. Pointer interaction affects dots only when halftone is selected.
+- “View CV” opens a focused, scrollable preview of the two original CV pages. Download PDF and Open PDF remain available. Escape or Close returns focus to the link; without JavaScript, the same link opens the PDF directly.
 - Use the research study tabs or Left/Right/Home/End keys. The schematic emphasis, contribution, and evidence change together. Native disclosures reveal methods and technical depth.
 - The diagram is a simplified, labelled n-i-p architecture. Its interaction motifs are conceptual explanations, not chemical structures or measured simulations.
 - “Explore the chemistry” opens nine coloured scenes across three studies. Pyrazine is shown as a real 1,4-diazine core motif, not a complete studied molecule; the star-shaped and donor–acceptor–donor views are explicitly conceptual topologies. Playback is user-started, finite, and stops on navigation, close, or visibility loss. Reduced motion retains static steps and hides playback.

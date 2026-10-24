@@ -15,7 +15,7 @@
   const notify=message=>{$("feedback").textContent=message;$("feedback").hidden=false;clearTimeout(toastTimeout);toastTimeout=setTimeout(()=>$("feedback").hidden=true,3000)};
   async function copy(text,success){try{await navigator.clipboard.writeText(text);notify(success)}catch{notify("Copy is unavailable here. You can select the text or copy the address from your browser.")}}
 
-  const portrait=$("portrait"),canvas=$("halftone"),photo=$("portrait-photo");
+  const portrait=$("portrait"),canvas=$("halftone"),photo=$("portrait-photo"),portraitToggle=$("portrait-toggle");
   try {
   const ctx=canvas.getContext("2d");
   const reducedMotion=matchMedia("(prefers-reduced-motion: reduce)");
@@ -54,7 +54,7 @@
       const lightness=Math.max(.035,Math.min(1,(lum-.04)/.86));
       dots.push({x,y,rLight:Math.sqrt(darkness)*step*.47,rDark:Math.sqrt(lightness)*step*.47,dx:0,dy:0});
     }}
-    portrait.classList.add("ready");requestPaint();
+    portrait.classList.add("ready");portraitToggle.hidden=false;requestPaint();
   }
   function requestPaint(){if(ctx&&dots.length&&!frame)frame=requestAnimationFrame(paint)}
   function paint(){
@@ -68,15 +68,15 @@
     }
     if(moving&&!document.hidden)requestPaint();
   }
-  portrait.addEventListener("pointermove",e=>{if(reducedMotion.matches||e.pointerType==="touch")return;const rect=portrait.getBoundingClientRect();pointer={x:e.clientX-rect.left,y:e.clientY-rect.top};lastMove=performance.now();requestPaint()});
+  portrait.addEventListener("pointermove",e=>{if(reducedMotion.matches||portrait.classList.contains("show-photo")||e.pointerType==="touch")return;const rect=portrait.getBoundingClientRect();pointer={x:e.clientX-rect.left,y:e.clientY-rect.top};lastMove=performance.now();requestPaint()});
   portrait.addEventListener("pointerleave",()=>{lastMove=0;requestPaint()});
-  portrait.addEventListener("click",()=>{const showing=portrait.classList.toggle("show-photo");portrait.setAttribute("aria-pressed",String(showing));portrait.setAttribute("aria-label",showing?"Show halftone portrait of Archana Sheshachala":"Show original portrait of Archana Sheshachala");lastMove=0;requestPaint()});
-  const safeBuild=()=>{try{buildPortrait()}catch{portrait.classList.remove("ready")}};
+  portraitToggle.addEventListener("click",()=>{const showing=portrait.classList.toggle("show-photo");portraitToggle.setAttribute("aria-pressed",String(!showing));portraitToggle.setAttribute("aria-label",showing?"Show halftone portrait":"Show original portrait");portraitToggle.textContent=showing?"Try halftone":"Show photo";lastMove=0;requestPaint()});
+  const safeBuild=()=>{try{buildPortrait()}catch{portrait.classList.remove("ready");portraitToggle.hidden=true}};
   if(photo.complete)safeBuild();else photo.addEventListener("load",safeBuild,{once:true});
   if(typeof ResizeObserver!=="undefined")new ResizeObserver(safeBuild).observe(portrait);
   if(typeof MutationObserver!=="undefined")new MutationObserver(requestPaint).observe(root,{attributes:true,attributeFilter:["data-theme"]});
   reducedMotion.addEventListener("change",()=>{lastMove=0;requestPaint()});
-  } catch { portrait.classList.remove("ready"); }
+  } catch { portrait.classList.remove("ready");portraitToggle.hidden=true; }
 
   // A single study selection changes the explanation, schematic, and evidence.
   const tabs = [...document.querySelectorAll("[data-topic]")];

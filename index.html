@@ -14,12 +14,14 @@
   <meta property="og:image:alt" content="Archana Sheshachala — Organic materials chemist. Research, publications, and CV.">  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/fonts/fonts.css">
-  <link rel="stylesheet" href="style.css?v=5e898d1bef">
+  <link rel="stylesheet" href="style.css?v=4fb4c193bd">
   <link rel="stylesheet" href="chemistry.css?v=2ce419ec80">
+  <link rel="stylesheet" href="cv-preview.css?v=52dea1f607">
   <script src="research.js?v=858ebbce8a" defer></script>
-  <script src="app.js?v=71f46171ad" defer></script>
+  <script src="app.js?v=487052d380" defer></script>
   <script src="chemistry-scenes.js?v=a6ffde56c4" defer></script>
   <script src="chemistry.js?v=2fb330dd93" defer></script>
+  <script src="cv-preview.js?v=9e4e68336b" defer></script>
   <link rel="canonical" href="https://archanasheshachala-source.github.io/">
   <meta property="og:url" content="https://archanasheshachala-source.github.io/">
   <meta property="og:image" content="https://archanasheshachala-source.github.io/assets/social-preview.png">
@@ -39,17 +41,17 @@
           <p>I design <strong>organic molecules that help perovskite solar cells extract charge</strong>. My work combines synthesis, device fabrication, and computational modelling.</p>
           <p>Based in Berlin. Open to R&amp;D opportunities in organic materials and photovoltaics, and to research collaborations.</p>
           <div class="intro-links">
-            <a class="cv-primary" href="assets/Archana-Sheshachala-CV.pdf" target="_blank" rel="noopener noreferrer">View CV<svg class="inline-icon" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 11 11 3M4 3h7v7"/></svg><span class="filetype">PDF</span></a>
+            <a class="cv-primary" href="assets/Archana-Sheshachala-CV.pdf" data-cv-preview target="_blank" rel="noopener noreferrer">View CV<svg class="inline-icon" viewBox="0 0 14 14" aria-hidden="true"><path d="M4 1.5h4l3 3v8H3v-11h1M8 1.5v3h3M5 7h4M5 9.5h4"/></svg><span class="filetype">PDF</span></a>
             <a href="mailto:archana.sheshachala@gmail.com">Email me<svg class="inline-icon" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 11 11 3M4 3h7v7"/></svg></a>
             <a href="https://www.linkedin.com/in/archana-sheshachala" target="_blank" rel="noopener noreferrer">LinkedIn<svg class="inline-icon" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 11 11 3M4 3h7v7"/></svg></a>
           </div>
         </div>
         <figure class="portrait-figure">
-          <button id="portrait" class="portrait" type="button" aria-label="Show original portrait of Archana Sheshachala" aria-pressed="false" aria-describedby="portrait-help">
+          <div id="portrait" class="portrait show-photo">
             <img id="portrait-photo" src="assets/archana.png" width="1023" height="1537" alt="Archana Sheshachala" fetchpriority="high">
             <canvas id="halftone" aria-hidden="true"></canvas>
-          </button>
-          <figcaption id="portrait-help">A little chemistry in the dots.<br><span>Move to explore · tap for photo</span></figcaption>
+          </div>
+          <figcaption><button id="portrait-toggle" class="portrait-toggle" type="button" aria-label="Show halftone portrait" aria-pressed="false" hidden>Try halftone</button></figcaption>
         </figure>
         <dl class="capability-strip" aria-label="Research capabilities">
           <div class="capability-row"><dt>Synthesis</dt><dd>Multistep organic synthesis and molecular characterisation.</dd></div>
@@ -208,7 +210,7 @@
       </section>
 
       <section id="background" class="section" aria-labelledby="background-title">
-        <div class="section-heading"><h2 id="background-title">Background</h2><a class="small-link" href="assets/Archana-Sheshachala-CV.pdf" download>Full CV <svg class="inline-icon" viewBox="0 0 14 14" aria-hidden="true"><path d="M7 2v10M3 8l4 4 4-4"/></svg></a></div>
+        <div class="section-heading"><h2 id="background-title">Background</h2><a class="small-link" href="assets/Archana-Sheshachala-CV.pdf" data-cv-preview target="_blank" rel="noopener noreferrer">View CV <svg class="inline-icon" viewBox="0 0 14 14" aria-hidden="true"><path d="M4 1.5h4l3 3v8H3v-11h1M8 1.5v3h3M5 7h4M5 9.5h4"/></svg></a></div>
         <div class="experience-row"><div><h3>PhD in Chemistry</h3><p>National Institute of Technology Karnataka, India</p><p class="experience-detail">Design, synthesis, and structural tailoring of heterocycle-based organic hole-transporting materials for perovskite photovoltaics.</p></div><span class="date">2020–2026</span></div>
         <div class="experience-row experience-row--compact"><div><h3>Master’s in Chemistry</h3><p>University of Mysore, India</p></div><span class="date">2017–2019</span></div>
         <div class="experience-row experience-row--compact"><div><h3>Bachelor’s in Science</h3><p>St Joseph’s University, Bengaluru, India · Physics, Chemistry, and Mathematics</p></div><span class="date">2014–2017</span></div>
@@ -226,6 +228,6 @@
     <footer><span>© 2026 Archana Sheshachala</span><span>Made with curiosity.</span><a href="#top">Back to top <svg class="inline-icon" viewBox="0 0 14 14" aria-hidden="true"><path d="M7 12V2M3 6l4-4 4 4"/></svg></a></footer>
   </div>
   <p id="feedback" class="toast" role="status" hidden></p>
-  <noscript><style>.research-tabs,.portrait-figure figcaption span{display:none}</style></noscript>
+  <noscript><style>.research-tabs{display:none}</style></noscript>
 </body>
 </html>

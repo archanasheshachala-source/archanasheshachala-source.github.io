@@ -264,8 +264,9 @@ svg {
   border: 0;
   border-radius: 2px;
   background: transparent;
-  cursor: crosshair;
 }
+
+.portrait.ready:not(.show-photo) { cursor: crosshair; }
 
 .portrait img,
 .portrait canvas {
@@ -279,7 +280,6 @@ svg {
 }
 
 .portrait img {
-  filter: grayscale(1);
   transform: scale(1.67);
   transform-origin: 50% 14%;
 }
@@ -293,14 +293,26 @@ svg {
 .portrait.ready:not(.show-photo) canvas { opacity: 1; }
 
 .portrait-figure figcaption {
-  margin-top: 7px;
+  margin-top: 2px;
   color: var(--secondary);
   font-size: 11px;
   line-height: 1.55;
   text-align: center;
 }
 
-.portrait-figure figcaption span { opacity: .85; }
+.portrait-toggle {
+  min-height: 40px;
+  padding: 5px 10px;
+  border: 0;
+  background: none;
+  color: var(--secondary);
+  font-size: 11px;
+  text-decoration: underline;
+  text-decoration-color: var(--line);
+  text-underline-offset: 4px;
+}
+
+.portrait-toggle:hover { text-decoration-color: var(--accent); }
 
 .capability-strip {
   grid-column: 1 / -1;
@@ -1040,6 +1052,8 @@ footer a {
     align-items: start;
   }
 
+  .chemistry-open { grid-column: 2; justify-self: start; }
+
   .device-schematic {
     grid-column: 1;
     grid-row: 1 / span 2;
@@ -1048,6 +1062,11 @@ footer a {
   .mechanism-strip { grid-column: 2; margin-top: 0; }
   #diagram-caption { grid-column: 2; }
   .research-tabs { justify-content: space-between; gap: 14px; }
+}
+
+@media (min-width: 481px) and (max-width: 600px) {
+  .intro { grid-template-columns: minmax(0, 1fr); }
+  .portrait-figure { justify-self: center; }
 }
 
 @media (max-width: 480px) {
