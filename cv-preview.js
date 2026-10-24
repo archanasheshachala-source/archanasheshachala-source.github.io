@@ -38,13 +38,13 @@
           </div>
           <div class="cv-preview-actions">
             <a id="cv-preview-download" class="cv-preview-action" download>Download PDF</a>
-            <a id="cv-preview-original" class="cv-preview-action" target="_blank" rel="noopener noreferrer">Open PDF in a new tab</a>
+            <a id="cv-preview-original" class="cv-preview-action" target="_blank" rel="noopener noreferrer">Open PDF</a>
             <button id="cv-preview-zoom" class="cv-preview-action cv-preview-zoom" type="button" aria-pressed="false">Zoom in</button>
           </div>
           <button id="cv-preview-close" class="cv-preview-close" type="button" autofocus>Close</button>
         </header>
         <div id="cv-preview-body" class="cv-preview-body" tabindex="0" aria-label="Two-page CV preview">
-          <p id="cv-preview-note" class="cv-preview-note">Preview images. Open the original PDF for selectable text.</p>
+          <p id="cv-preview-note" class="cv-preview-note">Open the PDF for selectable text.</p>
           <p id="cv-preview-status" class="cv-preview-status" role="status" aria-live="polite"></p>
           <div class="cv-preview-pages"></div>
         </div>
@@ -108,10 +108,26 @@
     document.body.append(dialog);
     const zoomButton = get("cv-preview-zoom");
     function setZoom(zoomed) {
+      const body = get("cv-preview-body");
+      const viewportTop = body.getBoundingClientRect().top + body.clientTop;
+      const visiblePages = images.filter(image => !image.parentElement.hidden);
+      const page = visiblePages.find(image =>
+        image.getBoundingClientRect().bottom > viewportTop) ||
+        visiblePages[visiblePages.length - 1];
+      const before = page?.getBoundingClientRect();
+      const offset = before ? viewportTop - before.top : 0;
+      const fraction = before?.height > 0 && offset >= 0 ? offset / before.height : null;
+
       dialog.dataset.zoom = String(zoomed);
       zoomButton.textContent = zoomed ? "Fit width" : "Zoom in";
       zoomButton.setAttribute("aria-pressed", String(zoomed));
-      get("cv-preview-body").scrollLeft = 0;
+      body.scrollLeft = 0;
+      if (page && before) {
+        const after = page.getBoundingClientRect();
+        const updatedTop = body.getBoundingClientRect().top + body.clientTop;
+        const readingOffset = fraction === null ? offset : fraction * after.height;
+        body.scrollTop += after.top - updatedTop + readingOffset;
+      }
     }
     zoomButton.addEventListener("click", () => {
       setZoom(dialog.dataset.zoom !== "true");

@@ -1,6 +1,6 @@
 # Archana Sheshachala — research profile
 
-A static personal academic website with a clear original portrait and optional halftone effect, linked research explanations, a coloured click-open chemistry walkthrough, expandable citations, an on-page CV preview/download, and professional contact links.
+A static personal academic website with an integrated monochrome portrait, linked research explanations, a coloured click-open chemistry walkthrough, expandable citations, an on-page CV preview/download, and professional contact links.
 
 Website address: https://archanasheshachala-source.github.io/
 
@@ -22,7 +22,7 @@ GitHub's current instructions: https://docs.github.com/en/pages/quickstart
 - Interactive research explanations, mechanism emphasis, and evidence tables: `research.js`.
 - Replace the CV at `assets/Archana-Sheshachala-CV.pdf` to keep the download URL stable.
 - Regenerate `assets/cv-page-1.png` and `assets/cv-page-2.png` from that same PDF when replacing it; the preview uses those pages. Preview behaviour and layout live in `cv-preview.js` and `cv-preview.css`.
-- Portrait source: `assets/archana.png`. The halftone is computed locally in the visitor's browser; the photo is not sent to a service.
+- Portrait: `assets/archana-monochrome.png`, a static transparent monochrome edit of the supplied original. The source photo is retained locally at `assets/archana.png`; edit provenance is recorded in `docs/portrait-asset.md`.
 - Appearance and responsive layout: `style.css`.
 - Click-open chemistry scenes and their scientific copy: `chemistry-scenes.js`.
 - Chemistry dialog, finite playback, and keyboard behaviour: `chemistry.js`; its scoped appearance: `chemistry.css`.
@@ -33,19 +33,19 @@ The displayed efficiency results describe the relevant individual studies and sh
 
 ## Local preview and packaging
 
-From the source project, run `node prepare.mjs` to copy only the public website files into `dist/`. Serve `dist/` using a static web server. No dependency installation is required. Content hashes on script/style URLs prevent older browser caches from mixing incompatible revisions. Direct file opening keeps the original portrait available if browser canvas restrictions prevent halftone rendering.
+From the source project, run `node prepare.mjs` to copy only the public website files into `dist/`. Serve `dist/` using a static web server. No dependency installation is required. Content hashes on script/style URLs prevent older browser caches from mixing incompatible revisions.
 
 The publishing archive contains the contents of `dist/`. Source context, research documents, and review screenshots are kept outside it.
 
 ## Interaction and accessibility
 
-- The original colour portrait is the default. “Try halftone” enables the optional dot treatment; “Show photo” restores the original. Pointer interaction affects dots only when halftone is selected.
+- The portrait is a plain, noninteractive image without a frame, background panel, caption, or effect control. The compact utility row contains only location and theme.
 - “View CV” opens a focused, scrollable preview of the two original CV pages. Download PDF and Open PDF remain available. Escape or Close returns focus to the link; without JavaScript, the same link opens the PDF directly.
 - Use the research study tabs or Left/Right/Home/End keys. The schematic emphasis, contribution, and evidence change together. Native disclosures reveal methods and technical depth.
 - The diagram is a simplified, labelled n-i-p architecture. Its interaction motifs are conceptual explanations, not chemical structures or measured simulations.
 - “Explore the chemistry” opens nine coloured scenes across three studies. Pyrazine is shown as a real 1,4-diazine core motif, not a complete studied molecule; the star-shaped and donor–acceptor–donor views are explicitly conceptual topologies. Playback is user-started, finite, and stops on navigation, close, or visibility loss. Reduced motion retains static steps and hides playback.
 - All five publication titles remain visible; native disclosures contain full authors, significance, and citation copying. Citation links open, scroll to, and focus the appropriate disclosure. Clipboard actions work on supported secure browser origins.
-- System appearance is respected initially, with a manual light/dark toggle. Reduced-motion preferences disable portrait displacement.
+- System appearance is respected initially, with a manual light/dark toggle. Reduced-motion preferences disable optional chemistry animations and smooth scrolling.
 - No third-party analytics, visitor accounts, cookies, or contact-form service is used. A local appearance preference is saved in the browser when available.
 
 ## Credits and rights

@@ -15,69 +15,6 @@
   const notify=message=>{$("feedback").textContent=message;$("feedback").hidden=false;clearTimeout(toastTimeout);toastTimeout=setTimeout(()=>$("feedback").hidden=true,3000)};
   async function copy(text,success){try{await navigator.clipboard.writeText(text);notify(success)}catch{notify("Copy is unavailable here. You can select the text or copy the address from your browser.")}}
 
-  const portrait=$("portrait"),canvas=$("halftone"),photo=$("portrait-photo"),portraitToggle=$("portrait-toggle");
-  try {
-  const ctx=canvas.getContext("2d");
-  const reducedMotion=matchMedia("(prefers-reduced-motion: reduce)");
-  let dots=[],frame=0,pointer={x:-1000,y:-1000},lastMove=0,canvasWidth=0,canvasHeight=0;
-  function buildPortrait(){
-    if(!ctx||!photo.naturalWidth)return;
-    const w=portrait.clientWidth,h=portrait.clientHeight,dpr=Math.min(devicePixelRatio||1,2);
-    canvasWidth=w;canvasHeight=h;canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);
-    const sample=document.createElement("canvas");sample.width=w;sample.height=h;
-    const sc=sample.getContext("2d",{willReadFrequently:true});
-    const sw=photo.naturalWidth*.60,sh=sw*h/w,sx=photo.naturalWidth*.20,sy=photo.naturalHeight*.045;
-    const scale=w/sw;
-    Object.assign(photo.style,{width:`${photo.naturalWidth*scale}px`,height:`${photo.naturalHeight*scale}px`,left:`${-sx*scale}px`,top:`${-sy*scale}px`,transform:"none",objectFit:"fill"});
-    if(!sc)return;
-    sc.drawImage(photo,sx,sy,sw,sh,0,0,w,h);
-    let pixels;try{pixels=sc.getImageData(0,0,w,h).data}catch{return}
-    const step=2.65;
-    const background=new Uint8Array(w*h),queue=new Int32Array(w*h);
-    let queueStart=0,queueEnd=0;
-    function markBackground(x,y){
-      const point=y*w+x;if(background[point])return;const i=point*4;
-      const r=pixels[i],g=pixels[i+1],b=pixels[i+2];
-      const lum=(r*.2126+g*.7152+b*.0722)/255;
-      if(lum<.71||Math.max(r,g,b)-Math.min(r,g,b)>42)return;
-      background[point]=1;queue[queueEnd++]=point;
-    }
-    for(let x=0;x<w;x++){markBackground(x,0);markBackground(x,h-1)}
-    for(let y=0;y<h;y++){markBackground(0,y);markBackground(w-1,y)}
-    while(queueStart<queueEnd){const point=queue[queueStart++],x=point%w,y=Math.floor(point/w);if(x>0)markBackground(x-1,y);if(x<w-1)markBackground(x+1,y);if(y>0)markBackground(x,y-1);if(y<h-1)markBackground(x,y+1)}
-    dots=[];
-    for(let y=step/2;y<h;y+=step){for(let x=step/2;x<w;x+=step){
-      const point=Math.floor(y)*w+Math.floor(x),i=point*4;
-      if(background[point])continue;
-      const lum=(pixels[i]*.2126+pixels[i+1]*.7152+pixels[i+2]*.0722)/255;
-      const darkness=Math.max(0,Math.min(1,(1-lum-.16)/.73));
-      const lightness=Math.max(.035,Math.min(1,(lum-.04)/.86));
-      dots.push({x,y,rLight:Math.sqrt(darkness)*step*.47,rDark:Math.sqrt(lightness)*step*.47,dx:0,dy:0});
-    }}
-    portrait.classList.add("ready");portraitToggle.hidden=false;requestPaint();
-  }
-  function requestPaint(){if(ctx&&dots.length&&!frame)frame=requestAnimationFrame(paint)}
-  function paint(){
-    frame=0;ctx.clearRect(0,0,canvasWidth,canvasHeight);ctx.fillStyle=getComputedStyle(root).getPropertyValue("--ink").trim();const dark=root.dataset.theme==="dark";
-    let moving=false;const active=!reducedMotion.matches&&!portrait.classList.contains("show-photo")&&performance.now()-lastMove<1200;
-    for(const dot of dots){let tx=0,ty=0;
-      if(active){const px=dot.x-pointer.x,py=dot.y-pointer.y,dist=Math.hypot(px,py);if(dist<44&&dist>.01){const force=(1-dist/44)**2*13;tx=px/dist*force;ty=py/dist*force}}
-      if(reducedMotion.matches){dot.dx=0;dot.dy=0}else{dot.dx+=(tx-dot.dx)*.14;dot.dy+=(ty-dot.dy)*.14;}
-      if(Math.abs(tx-dot.dx)>.035||Math.abs(ty-dot.dy)>.035)moving=true;
-      const radius=dark?dot.rDark:dot.rLight;if(radius>.05){ctx.beginPath();ctx.arc(dot.x+dot.dx,dot.y+dot.dy,radius,0,Math.PI*2);ctx.fill()}
-    }
-    if(moving&&!document.hidden)requestPaint();
-  }
-  portrait.addEventListener("pointermove",e=>{if(reducedMotion.matches||portrait.classList.contains("show-photo")||e.pointerType==="touch")return;const rect=portrait.getBoundingClientRect();pointer={x:e.clientX-rect.left,y:e.clientY-rect.top};lastMove=performance.now();requestPaint()});
-  portrait.addEventListener("pointerleave",()=>{lastMove=0;requestPaint()});
-  portraitToggle.addEventListener("click",()=>{const showing=portrait.classList.toggle("show-photo");portraitToggle.setAttribute("aria-pressed",String(!showing));portraitToggle.setAttribute("aria-label",showing?"Show halftone portrait":"Show original portrait");portraitToggle.textContent=showing?"Try halftone":"Show photo";lastMove=0;requestPaint()});
-  const safeBuild=()=>{try{buildPortrait()}catch{portrait.classList.remove("ready");portraitToggle.hidden=true}};
-  if(photo.complete)safeBuild();else photo.addEventListener("load",safeBuild,{once:true});
-  if(typeof ResizeObserver!=="undefined")new ResizeObserver(safeBuild).observe(portrait);
-  if(typeof MutationObserver!=="undefined")new MutationObserver(requestPaint).observe(root,{attributes:true,attributeFilter:["data-theme"]});
-  reducedMotion.addEventListener("change",()=>{lastMove=0;requestPaint()});
-  } catch { portrait.classList.remove("ready");portraitToggle.hidden=true; }
-
   // A single study selection changes the explanation, schematic, and evidence.
   const tabs = [...document.querySelectorAll("[data-topic]")];
   const topics = window.researchTopics;
