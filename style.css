@@ -362,24 +362,12 @@ svg {
 }
 
 .research-panel-heading {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  column-gap: 24px;
+  display: block;
   padding-block: 22px;
 }
 
-.research-panel-heading > h3,
-.research-panel-heading > p { grid-column: 1; }
-
-.research-panel-heading > .chemistry-open {
-  grid-column: 2;
-  grid-row: 1 / span 3;
-  align-self: center;
-  margin-top: 0;
-}
-
 #research-question {
-  max-width: 52ch;
+  max-width: 66ch;
   margin-bottom: 6px;
   font-size: 20px;
   letter-spacing: -.02em;
@@ -402,14 +390,12 @@ svg {
 .research-layout {
   display: grid;
   grid-template-columns: 200px minmax(0, 1fr);
-  grid-template-rows: min-content 1fr;
-  gap: 0 32px;
+  gap: 32px;
   align-items: start;
 }
 
-.research-overview { grid-column: 2; grid-row: 1; }
-.research-details { grid-column: 2; grid-row: 2; }
-.research-layout > #device-diagram { grid-column: 1; grid-row: 1 / span 2; }
+.research-reading { grid-column: 2; grid-row: 1; }
+.research-layout > #device-diagram { grid-column: 1; grid-row: 1; }
 
 .research-case {
   min-width: 0;
@@ -418,10 +404,11 @@ svg {
   line-height: 1.75;
 }
 
-#research-summary { margin-bottom: 14px; }
+#research-summary { margin: 0; }
+.research-evidence { margin-top: 20px; }
 
 .research-contribution {
-  margin-bottom: 18px;
+  margin-block: 12px;
   font-size: 14px;
   line-height: 1.7;
 }
@@ -433,22 +420,15 @@ svg {
 }
 
 #research-evidence-summary {
-  margin-bottom: 12px;
+  margin-bottom: 14px;
   color: var(--ink);
   font-size: 15px;
   line-height: 1.7;
 }
 
-.research-evidence h4 {
-  margin-bottom: 7px;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1.6;
-}
-
 #research-evidence-table {
   width: 100%;
-  margin-block: 14px 10px;
+  margin-block: 14px 0;
   border-collapse: collapse;
   color: var(--ink);
   font-size: 14px;
@@ -484,6 +464,14 @@ svg {
 
 #research-evidence-table thead th { font-weight: 500; }
 
+#research-evidence-table thead th:last-child {
+  width: 86px;
+  padding-right: 0;
+  text-align: right;
+}
+
+#research-evidence-summary[hidden] + #research-evidence-table { margin-top: 0; }
+
 #research-evidence-note {
   margin-bottom: 14px;
   color: var(--secondary);
@@ -492,6 +480,7 @@ svg {
 }
 
 #research-technical {
+  margin-top: 20px;
   padding-top: 1px;
   border-top: 1px dotted var(--line);
 }
@@ -515,7 +504,7 @@ svg {
   flex-wrap: wrap;
   align-items: center;
   gap: 0 18px;
-  margin-top: 10px;
+  margin-top: 16px;
   font-size: 12px;
 }
 
@@ -535,7 +524,7 @@ svg {
   color: var(--secondary);
 }
 
-.device-schematic { padding-inline: 3px; }
+.device-schematic { padding-inline: 0; }
 
 .device-stack {
   display: grid;
@@ -644,39 +633,9 @@ svg {
   line-height: 1.5;
 }
 
-.mechanism-strip {
-  display: grid;
-  gap: 4px;
-  margin-top: 13px;
-  padding-top: 11px;
-  border-top: 1px dotted var(--line);
-}
 
-.mechanism-motif {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 7px;
-  margin: 0;
-  color: var(--accent);
-  font-size: 15px;
-  font-weight: 500;
-  line-height: 1.5;
-  text-align: center;
-}
 
-.mechanism-motif svg {
-  width: 36px;
-  height: 12px;
-  flex-shrink: 0;
-}
 
-.mechanism-caption {
-  margin: 0;
-  font-size: 11.5px;
-  line-height: 1.55;
-  text-align: center;
-}
 
 #diagram-caption {
   margin-top: 11px;
@@ -690,7 +649,7 @@ svg {
   justify-content: center;
   gap: 8px;
   min-height: 44px;
-  margin-top: 14px;
+  margin-top: 0;
   padding: 8px 10px;
   border: 1px solid var(--line);
   border-radius: 5px;
@@ -1076,28 +1035,29 @@ footer a {
   .capability-strip { grid-template-columns: minmax(0, 1fr); gap: 0; }
   .capability-row { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 16px; padding-block: 6px; }
   .capability-row dt { margin: 0; }
-  .research-panel-heading { display: block; }
-  .research-panel-heading > .chemistry-open { margin-top: 14px; }
   .research-layout { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto; gap: 22px; }
-  .research-overview,
-  .research-details,
-  .research-layout > #device-diagram { grid-column: 1; grid-row: auto; }
-  .research-overview .research-contribution { margin-bottom: 0; }
+  .research-reading { grid-column: 1; grid-row: 1; }
+  .research-layout > #device-diagram { grid-column: 1; grid-row: 2; }
 
   #device-diagram {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    column-gap: 24px;
-    align-items: start;
+    width: 100%;
+    max-width: 480px;
+    margin-top: 4px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
   }
 
   .device-schematic {
-    grid-column: 1;
-    grid-row: 1 / span 2;
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+    column-gap: 20px;
+    align-items: center;
   }
 
-  .mechanism-strip { grid-column: 2; margin-top: 0; }
-  #diagram-caption { grid-column: 2; }
+  .device-stack { grid-column: 1; grid-row: 1 / span 2; }
+  .device-flow { grid-column: 2; grid-row: 1; display: grid; gap: 14px; padding: 0; }
+  .device-light { grid-column: 2; grid-row: 2; align-self: start; justify-content: start; }
+
   .research-tabs { justify-content: space-between; gap: 14px; }
 }
 
@@ -1159,12 +1119,6 @@ footer a {
   #research-question { font-size: 20px; }
   #research-context { font-size: 12px; }
 
-  #device-diagram {
-    display: block;
-    padding-block: 2px 15px;
-    border-bottom: 1px dotted var(--line);
-  }
-
   .device-schematic {
     display: grid;
     grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
@@ -1200,20 +1154,10 @@ footer a {
     font-size: 11.5px;
   }
 
-  .mechanism-strip {
-    grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
-    align-items: center;
-    gap: 12px;
-    margin-top: 15px;
-    padding-top: 11px;
-  }
 
-  .mechanism-motif { font-size: 14px; }
-  .mechanism-caption { text-align: left; }
   #diagram-caption { margin-top: 10px; }
 
   .research-layout { gap: 19px; }
-  .research-contribution { margin-bottom: 17px; }
   .research-bottom,
   .research-actions { gap: 0 16px; }
 
@@ -1282,12 +1226,12 @@ footer a {
   .section { padding-block: 20px; }
   .section-heading { break-after: avoid; }
   .research-layout { grid-template-columns: 180px minmax(0, 1fr); gap: 24px; }
-  #device-diagram { display: block; padding: 0; border: 0; break-inside: avoid; }
+  .research-reading { grid-column: 2; grid-row: 1; }
+  .research-layout > #device-diagram { grid-column: 1; grid-row: 1; }
+  #device-diagram { display: block; margin: 0; padding: 0; border: 0; break-inside: avoid; }
   .device-schematic { display: block; }
   .device-flow { display: flex; padding-top: 10px; }
   .device-light { justify-content: center; }
-  .mechanism-strip { display: grid; grid-template-columns: 1fr; }
-  .mechanism-caption { text-align: center; }
   .paper { break-inside: avoid; }
   .paper-details::details-content,
   .full-publications::details-content,

@@ -15,11 +15,11 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/fonts/fonts.css">
-  <link rel="stylesheet" href="style.css?v=b4df3d999c">
+  <link rel="stylesheet" href="style.css?v=6316dbe2c4">
   <link rel="stylesheet" href="chemistry.css?v=c2ba750c3c">
   <link rel="stylesheet" href="cv-preview.css?v=ab6b5728c4">
-  <script src="research.js?v=35abdb23a4" defer></script>
-  <script src="app.js?v=120805094c" defer></script>
+  <script src="research.js?v=1983920a8a" defer></script>
+  <script src="app.js?v=f0ff568a87" defer></script>
   <script src="chemistry-scenes.js?v=8c469182aa" defer></script>
   <script src="chemistry.js?v=23424cb856" defer></script>
   <script src="cv-preview.js?v=4bbcb8d589" defer></script>
@@ -64,7 +64,7 @@
 
       <section id="research" class="section research-section" aria-labelledby="research-title">
         <div class="section-heading"><h2 id="research-title">From molecule to device</h2></div>
-        <p class="section-intro">Light creates mobile electrons and positive charge carriers called holes in the perovskite. I study the organic layer that extracts holes, and its contact with the perovskite.</p>
+        <p class="section-intro">I study how organic materials extract positive charge (holes) from perovskite solar cells.</p>
         <div class="research-explorer" id="research-explorer">
           <div class="research-tabs" role="tablist" aria-label="Research topics">
             <button id="tab-star" type="button" role="tab" aria-selected="true" aria-controls="research-panel" data-topic="star" tabindex="0">Dopant-free transport</button>
@@ -76,12 +76,30 @@
               <h3 id="research-question">19.24% efficiency with dopant-free hole transport</h3>
               <p id="research-context" class="research-context">Carbazole–triphenylamine hybrids · First author · Carbon Energy, accepted</p>
               <p id="research-collaboration" class="research-collaboration">Collaborative work with Penn State, USA.</p>
-              <button id="chemistry-open" class="chemistry-open" type="button" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 8 8 8M8 16l8-8"/><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="18" r="3"/></svg><span>Explore the chemistry</span><svg class="inline-icon" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 11 11 3M4 3h7v7"/></svg></button>
             </div>
             <div class="research-layout">
-              <div class="research-overview research-case">
-                <p id="research-summary">I designed star-shaped carbazole–triphenylamine molecules that extract holes without added dopants. The best material, SS1, reached 19.24% power conversion efficiency in a mixed-cation/mixed-halide perovskite cell.</p>
-                <p class="research-contribution"><strong id="contribution-label">My contribution:</strong> <span id="research-contribution">Molecular design and synthesis, with experimental and theoretical analysis connecting structure, charge transport, and device performance.</span></p>
+              <div class="research-reading research-case">
+                <p id="research-summary">I designed star-shaped carbazole–triphenylamine materials for hole extraction without added dopants.</p>
+                <div class="research-evidence">
+                  <p id="research-evidence-summary">Unencapsulated SS1 cells retained &gt;91% of their initial efficiency after 1,500 h of storage (~28 °C, ~65% relative humidity).</p>
+                  <table id="research-evidence-table">
+                    <caption id="research-comparison-label">SS1 power conversion efficiency</caption>
+                    <thead><tr><th scope="col" id="research-comparison-column">Device configuration</th><th scope="col">PCE</th></tr></thead>
+                    <tbody id="research-evidence-body"><tr><th scope="row">Mixed-cation/mixed-halide cell</th><td>19.24%</td></tr><tr><th scope="row">MAPbI₃ cell · 1 cm² active area</th><td>17.25%</td></tr></tbody>
+                  </table>
+                  <p id="research-evidence-note" class="research-evidence-note" hidden></p>
+                </div>
+                <details id="research-technical" class="research-technical">
+                  <summary>Contribution &amp; methods</summary>
+                  <p class="research-contribution"><strong id="contribution-label">My contribution:</strong> <span id="research-contribution">Molecular design and synthesis, with experimental and theoretical analysis connecting structure, charge transport, and device performance.</span></p>
+                  <p id="research-technical-copy">SS1 and SS2 share a carbazole core with two thiophene-linked triphenylamine arms and an N-linked methoxy-substituted triphenylamine arm. Methoxy substitution on the two terminal arms distinguishes SS1 from SS2; the N-linked arm is not a fully conjugated extension of the backbone. In small-area MAPbI₃ cells (~0.096 cm²), SS1 reached 17.73% PCE versus 15.76% for undoped Spiro-OMeTAD. The separate mixed-cation/mixed-halide cell reached 19.24%, and a 1 cm² MAPbI₃ cell reached 17.25%. Unencapsulated SS1 cells retained &gt;91% of initial PCE after 1,500 h of storage (~28 °C, ~65% RH).</p>
+                  <p id="research-methods" class="research-methods">Organic synthesis · Spectroscopy · Device fabrication · DFT/TD-DFT</p>
+                </details>
+                <div class="research-actions">
+                  <button id="chemistry-open" class="chemistry-open" type="button" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 8 8 8M8 16l8-8"/><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="18" r="3"/></svg><span>Explore the chemistry</span><svg class="inline-icon" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 11 11 3M4 3h7v7"/></svg></button>
+                  <a id="research-paper" href="#paper-star">Publication details<svg class="inline-icon" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 11 11 3M4 3h7v7"/></svg></a>
+                  <a id="research-citation" class="research-citation-link" href="#paper-star" hidden>Citation &amp; authors</a>
+                </div>
               </div>
               <figure id="device-diagram" class="device-diagram" data-focus="transport" aria-label="Simplified n-i-p solar-cell schematic">
                 <div class="device-schematic">
@@ -94,47 +112,13 @@
                     <div class="device-layer device-layer--glass"><span class="device-layer-label">Transparent electrode / glass</span></div>
                   </div>
                   <div class="device-flow" aria-label="Charge collection directions">
-                    <span class="device-flow--holes"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M7 12V2M3 6l4-4 4 4"/></svg>Holes to top electrode</span>
-                    <span class="device-flow--electrons"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M7 2v10M3 8l4 4 4-4"/></svg>Electrons to transparent electrode</span>
+                    <span class="device-flow--holes"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M7 12V2M3 6l4-4 4 4"/></svg>Holes to top contact</span>
+                    <span class="device-flow--electrons"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M7 2v10M3 8l4 4 4-4"/></svg>Electrons to front contact</span>
                   </div>
-                  <p class="device-light"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M7 12V2M3 6l4-4 4 4"/></svg>Light enters through glass</p>
+                  <p class="device-light"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M7 12V2M3 6l4-4 4 4"/></svg>Light through glass</p>
                 </div>
-                <div class="mechanism-strip" data-mechanism="interface" hidden>
-                  <div class="mechanism-motif" aria-label="Nitrogen interacting with lead two plus"><span>N</span><svg viewBox="0 0 40 12" aria-hidden="true"><path d="M2 6h36" stroke-dasharray="2 5"/></svg><span>Pb²⁺</span></div>
-                  <p class="mechanism-caption">Nitrogen–lead interaction at the interface, shown schematically.</p>
-                </div>
-                <div class="mechanism-strip" data-mechanism="transport">
-                  <p class="mechanism-motif">Hole transport without added dopants</p>
-                  <p class="mechanism-caption">The organic layer carries holes toward the electrode.</p>
-                </div>
-                <div class="mechanism-strip" data-mechanism="architecture" hidden>
-                  <p class="mechanism-motif">Donor — pyridine core — donor</p>
-                  <p class="mechanism-caption">Simplified donor–core–donor architecture.</p>
-                </div>
-                <figcaption id="diagram-caption">The highlighted organic layer extracts holes without added dopants in this study. Schematic, not to scale.</figcaption>
+                <figcaption id="diagram-caption">Organic hole-transport layer highlighted. Schematic, not to scale.</figcaption>
               </figure>
-
-              <div class="research-details research-case">
-                <div class="research-evidence">
-                  <h4>What the evidence shows</h4>
-                  <p id="research-evidence-summary">SS1 retained &gt;91% of its initial efficiency after 1,500 h of storage without encapsulation. A separate 1 cm² device demonstrated performance at a larger active area.</p>
-                  <table id="research-evidence-table">
-                    <caption id="research-comparison-label">SS1 results · separate device configurations</caption>
-                    <thead><tr><th scope="col" id="research-comparison-column">Device configuration</th><th scope="col">PCE</th></tr></thead>
-                    <tbody id="research-evidence-body"><tr><th scope="row">Mixed-cation/mixed-halide cell</th><td>19.24%</td></tr><tr><th scope="row">MAPbI₃ cell · 1 cm² active area</th><td>17.25%</td></tr></tbody>
-                  </table>
-                  <p id="research-evidence-note" class="research-evidence-note">Unencapsulated storage: ~28 °C, ~65% relative humidity. The two efficiency results use different absorber compositions and active areas.</p>
-                </div>
-                <details id="research-technical" class="research-technical">
-                  <summary>Methods &amp; technical detail</summary>
-                  <p id="research-technical-copy">SS1 and SS2 share a carbazole core with two thiophene-linked triphenylamine arms and an N-linked methoxy-substituted triphenylamine arm. Methoxy substitution on the two terminal arms distinguishes SS1 from SS2; the N-linked arm is not a fully conjugated extension of the backbone. In small-area MAPbI₃ cells (~0.096 cm²), SS1 reached 17.73% PCE versus 15.76% for undoped Spiro-OMeTAD. The separate mixed-cation/mixed-halide cell reached 19.24%, and a 1 cm² MAPbI₃ cell reached 17.25%. Unencapsulated SS1 cells retained &gt;91% of initial PCE after 1,500 h of storage (~28 °C, ~65% RH).</p>
-                  <p id="research-methods" class="research-methods">Organic synthesis · Spectroscopy · Device fabrication · DFT/TD-DFT</p>
-                </details>
-                <div class="research-actions">
-                  <a id="research-paper" href="#paper-star">Publication details<svg class="inline-icon" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 11 11 3M4 3h7v7"/></svg></a>
-                  <a id="research-citation" class="research-citation-link" href="#paper-star" hidden>Citation &amp; authors</a>
-                </div>
-              </div>
             </div>
           </div>
         </div>

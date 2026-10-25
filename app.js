@@ -54,9 +54,6 @@
 
     const diagram = $("device-diagram");
     if (diagram) diagram.dataset.focus = topic.focus;
-    document.querySelectorAll("[data-mechanism]").forEach(strip => {
-      strip.hidden = strip.dataset.mechanism !== topic.focus;
-    });
     const evidenceSummary = $("research-evidence-summary");
     if (evidenceSummary) evidenceSummary.hidden = !topic.evidenceSummary;
     const note = $("research-evidence-note");
