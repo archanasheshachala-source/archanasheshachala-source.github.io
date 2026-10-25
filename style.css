@@ -230,8 +230,8 @@ svg {
 .intro-links a:hover { color: var(--accent); }
 
 .intro-links .cv-primary {
-  min-height: 44px;
-  padding: 8px 15px;
+  min-height: 36px;
+  padding: 5px 12px;
   border: 1px solid var(--accent);
   border-radius: 4px;
   background: var(--accent);
@@ -648,9 +648,9 @@ svg {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  min-height: 44px;
+  min-height: 36px;
   margin-top: 0;
-  padding: 8px 10px;
+  padding: 5px 9px;
   border: 1px solid var(--line);
   border-radius: 5px;
   background: var(--wash);
@@ -661,7 +661,7 @@ svg {
   text-align: left;
 }
 
-.chemistry-open > svg:first-child { width: 18px; height: 18px; flex-shrink: 0; }
+.chemistry-open > svg:first-child { width: 16px; height: 16px; flex-shrink: 0; }
 .chemistry-open:hover { border-color: var(--accent); background: var(--selected); }
 
 /* Publications: every title stays visible; detail is a native disclosure. */
@@ -1181,6 +1181,32 @@ footer a {
   .intro-links .cv-primary { padding-inline: 12px; }
 }
 
+/* Quiet feedback: controls acknowledge intent; reading content stays still. */
+:where(button, summary, .cv-primary) {
+  transition: color 160ms ease-out, background-color 160ms ease-out,
+    border-color 160ms ease-out, outline-offset 160ms ease-out;
+}
+.icon-button { border-radius: 50%; }
+.icon-button:is(:hover, :focus-visible) { background: var(--wash); color: var(--accent); }
+.research-tabs button:not([aria-selected="true"]):is(:hover, :focus-visible) {
+  color: var(--accent);
+  border-bottom-color: var(--line);
+}
+.full-publications > summary > svg { transition: transform 180ms ease-out; }
+:where(.intro-links, .section-nav, .research-actions, .contact-links, footer) a .inline-icon,
+.chemistry-open > .inline-icon { transition: transform 180ms cubic-bezier(.16, 1, .3, 1); }
+@media (hover: hover) and (pointer: fine) {
+  :where(.section-nav, .research-actions, .contact-links) a:hover .inline-icon,
+  .intro-links a:not(.cv-primary):hover .inline-icon,
+  .chemistry-open:hover > .inline-icon { transform: translate(1px, -1px); }
+  footer a:hover .inline-icon { transform: translateY(-2px); }
+}
+.intro-links .cv-primary:active, .chemistry-open:active { background: var(--ink); color: var(--bg); }
+@media (pointer: coarse) {
+  .intro-links .cv-primary, .chemistry-open, .icon-button { min-height: 44px; }
+  .icon-button { min-width: 44px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   :root { scroll-behavior: auto; }
 
@@ -1190,6 +1216,8 @@ footer a {
     animation: none !important;
     transition: none !important;
   }
+  :where(.intro-links, .section-nav, .research-actions, .contact-links, footer) a .inline-icon,
+  .chemistry-open > .inline-icon { transform: none !important; }
 }
 
 @media print {
