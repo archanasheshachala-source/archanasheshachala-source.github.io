@@ -53,10 +53,6 @@
     setText("research-methods", topic.methods);
     setText("research-relevance-copy", topic.practicalContext || "");
     if ($("research-relevance")) $("research-relevance").hidden = !topic.practicalContext;
-    if ($("research-background")) {
-      $("research-background").href = topic.backgroundHref || topic.paperHref;
-      $("research-background").hidden = !topic.backgroundHref;
-    }
 
     const diagram = $("device-diagram");
     if (diagram) {

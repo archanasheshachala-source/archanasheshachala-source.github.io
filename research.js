@@ -55,8 +55,7 @@ window.researchTopics = {
         "label": "Glass substrate"
       }
     ],
-    "practicalContext": "Spiro-OMeTAD commonly uses dopants and additives to improve conductivity, with associated moisture and volatility challenges. At 1 g scale, SS1’s estimated reagent cost was roughly one-sixth that of Spiro-OMeTAD. Its dopant-free formulation and 1 cm² device result support further development toward affordable, durable solar cells.",
-    "backgroundHref": "https://doi.org/10.1002/aenm.202506760"
+    "practicalContext": "Spiro-OMeTAD commonly uses dopants and additives to improve conductivity, with associated moisture and volatility challenges. At 1 g scale, SS1’s estimated reagent cost was roughly one-sixth that of Spiro-OMeTAD. Its dopant-free formulation and 1 cm² device result support further development toward affordable, durable solar cells."
   },
   "pyrazine": {
     "question": "Pyrazine: an underexplored core for hole transport",
@@ -102,8 +101,7 @@ window.researchTopics = {
         "label": "Glass substrate"
       }
     ],
-    "practicalContext": "Understanding nitrogen–lead interaction can guide future materials that combine hole extraction with surface-defect management. The next opportunity is to optimise these pyrazine-based materials for better device performance.",
-    "backgroundHref": "https://doi.org/10.1002/cplu.202500124"
+    "practicalContext": "Understanding nitrogen–lead interaction can guide future materials that combine hole extraction with surface-defect management. The next opportunity is to optimise these pyrazine-based materials for better device performance."
   },
   "pyridine": {
     "question": "Can a spiro-free molecule approach the benchmark’s performance?",
@@ -162,7 +160,6 @@ window.researchTopics = {
         "label": "Glass substrate"
       }
     ],
-    "practicalContext": "The spiro-free scaffold provides another route to benchmark-level performance. It supports investigating alternatives to complex spiro-centred frameworks, with scalable synthesis and long-term device durability as further development goals.",
-    "backgroundHref": "https://doi.org/10.1039/D6CC01269H"
+    "practicalContext": "The spiro-free scaffold provides another route to benchmark-level performance. It supports investigating alternatives to complex spiro-centred frameworks, with scalable synthesis and long-term device durability as further development goals."
   }
 };
