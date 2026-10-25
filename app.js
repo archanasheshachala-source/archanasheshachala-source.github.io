@@ -175,7 +175,7 @@
   });
   if (location.hash.startsWith("#paper-")) openPublication(location.hash.slice(1), false);
   addEventListener("hashchange", () => {
-    if (location.hash.startsWith("#paper-")) openPublication(location.hash.slice(1), false);
+    if (location.hash.startsWith("#paper-")) openPublication(location.hash.slice(1));
   });
 
   document.querySelectorAll('a[href="#methods"]').forEach(link => {
