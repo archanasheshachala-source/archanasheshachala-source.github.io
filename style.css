@@ -242,6 +242,7 @@ svg {
 .intro-links .cv-primary:hover { background: var(--ink); border-color: var(--ink); color: var(--bg); }
 
 .portrait {
+  position: relative;
   display: block;
   grid-column: 2;
   grid-row: 1 / span 5;
@@ -249,10 +250,20 @@ svg {
   justify-self: end;
   width: var(--portrait-width);
   height: var(--portrait-height);
-  object-fit: contain;
-  object-position: center bottom;
+  overflow: hidden;
   filter: grayscale(1);
   background: transparent;
+}
+
+.portrait img {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  display: block;
+  width: 170%;
+  max-width: none;
+  height: auto;
+  transform: translateX(-50%);
 }
 
 .capability-strip {
