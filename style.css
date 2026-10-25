@@ -10,10 +10,10 @@
   --wash: #f0f1ed;
   --selected: #e6ebe4;
   --font: "DM Sans", Arial, sans-serif;
-  --gutter: 32px;
+  --gutter: 40px;
   --section-space: 40px;
-  --portrait-width: 202px;
-  --portrait-height: 250px;
+  --portrait-width: 170px;
+  --portrait-height: 204px;
   color-scheme: light;
   font-family: var(--font);
   font-synthesis: none;
@@ -103,7 +103,7 @@ h4 {
 }
 
 h2 {
-  font-size: 16px;
+  font-size: 20px;
   letter-spacing: -.02em;
 }
 
@@ -127,7 +127,7 @@ svg {
 }
 
 .page {
-  max-width: 792px;
+  max-width: 900px;
   min-height: 100vh;
   margin-inline: auto;
   padding-inline: var(--gutter);
@@ -139,7 +139,7 @@ svg {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  min-height: 64px;
+  min-height: 56px;
 }
 
 .topbar-right {
@@ -167,34 +167,42 @@ svg {
 
 .intro {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) var(--portrait-width);
-  column-gap: 34px;
-  row-gap: 26px;
+  grid-template-columns: minmax(0, 1fr);
+  row-gap: 24px;
   align-items: start;
   padding: 16px 0 26px;
 }
 
-.intro-copy { min-width: 0; }
+.intro-copy {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--portrait-width);
+  column-gap: 40px;
+  min-width: 0;
+}
+
+.intro-copy > :not(.portrait) { grid-column: 1; }
 
 .intro h1 {
-  margin-bottom: 8px;
-  font-size: 27px;
+  margin-bottom: 6px;
+  font-size: 34px;
   line-height: 1.2;
   letter-spacing: -.035em;
 }
 
 .role {
-  margin-bottom: 20px;
+  margin-bottom: 18px;
   color: var(--secondary);
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .intro-copy > p:not(.role) {
-  max-width: 54ch;
+  max-width: 66ch;
   color: var(--secondary);
-  font-size: 14px;
-  line-height: 1.8;
+  font-size: 15px;
+  line-height: 1.7;
 }
+
+.intro-copy > .opportunities { margin-bottom: 0; font-size: 13px; }
 
 .intro-copy strong {
   color: var(--ink);
@@ -205,8 +213,8 @@ svg {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 2px 18px;
-  margin-top: 13px;
+  gap: 4px 20px;
+  margin-top: 18px;
   font-size: 13px;
 }
 
@@ -221,17 +229,23 @@ svg {
 
 .intro-links a:hover { color: var(--accent); }
 
-.cv-primary { font-weight: 600; }
-
-.filetype {
-  margin-left: 6px;
-  color: var(--secondary);
-  font-size: 10px;
-  font-weight: 400;
+.intro-links .cv-primary {
+  min-height: 44px;
+  padding: 8px 15px;
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 600;
 }
+
+.intro-links .cv-primary:hover { background: var(--ink); border-color: var(--ink); color: var(--bg); }
 
 .portrait {
   display: block;
+  grid-column: 2;
+  grid-row: 1 / span 5;
+  align-self: center;
   justify-self: end;
   width: var(--portrait-width);
   height: var(--portrait-height);
@@ -242,24 +256,25 @@ svg {
 }
 
 .capability-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
   grid-column: 1 / -1;
   margin: 0;
-  padding-top: 15px;
+  padding-top: 18px;
   border-top: 1px dotted var(--line);
 }
 
 .capability-row {
-  display: grid;
-  grid-template-columns: 108px minmax(0, 1fr);
-  gap: 16px;
-  padding-block: 5px;
+  min-width: 0;
   font-size: 13px;
   line-height: 1.65;
 }
 
 .capability-row dt {
+  margin-bottom: 4px;
   color: var(--ink);
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .capability-row dd {
@@ -271,11 +286,11 @@ svg {
 .section-nav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 16px;
+  justify-content: flex-start;
+  gap: 32px;
   padding-block: 8px;
   border-block: 1px solid var(--line);
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .section-nav a {
@@ -301,14 +316,14 @@ svg {
 
 .quiet {
   color: var(--secondary);
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .section-intro {
   max-width: 66ch;
   margin-bottom: 20px;
   color: var(--secondary);
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.75;
 }
 
@@ -335,7 +350,7 @@ svg {
   border-bottom: 2px solid transparent;
   background: none;
   color: var(--secondary);
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.5;
   text-align: left;
 }
@@ -346,12 +361,27 @@ svg {
   font-weight: 500;
 }
 
-.research-panel-heading { padding-block: 22px 19px; }
+.research-panel-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: 24px;
+  padding-block: 22px;
+}
+
+.research-panel-heading > h3,
+.research-panel-heading > p { grid-column: 1; }
+
+.research-panel-heading > .chemistry-open {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: center;
+  margin-top: 0;
+}
 
 #research-question {
   max-width: 52ch;
   margin-bottom: 6px;
-  font-size: 19px;
+  font-size: 20px;
   letter-spacing: -.02em;
 }
 
@@ -364,9 +394,9 @@ svg {
 
 .research-layout {
   display: grid;
-  grid-template-columns: 214px minmax(0, 1fr);
+  grid-template-columns: 200px minmax(0, 1fr);
   grid-template-rows: min-content 1fr;
-  gap: 0 28px;
+  gap: 0 32px;
   align-items: start;
 }
 
@@ -377,7 +407,7 @@ svg {
 .research-case {
   min-width: 0;
   color: var(--secondary);
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.75;
 }
 
@@ -385,7 +415,7 @@ svg {
 
 .research-contribution {
   margin-bottom: 18px;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.7;
 }
 
@@ -398,14 +428,14 @@ svg {
 #research-evidence-summary {
   margin-bottom: 12px;
   color: var(--ink);
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.7;
 }
 
 .research-evidence h4 {
   margin-bottom: 7px;
-  font-size: 13px;
-  font-weight: 500;
+  font-size: 14px;
+  font-weight: 600;
   line-height: 1.6;
 }
 
@@ -414,7 +444,7 @@ svg {
   margin-block: 14px 10px;
   border-collapse: collapse;
   color: var(--ink);
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.6;
   font-variant-numeric: tabular-nums;
 }
@@ -670,7 +700,7 @@ svg {
 
 /* Publications: every title stays visible; detail is a native disclosure. */
 .paper {
-  padding-block: 19px;
+  padding-block: 16px;
   border-bottom: 1px dotted var(--line);
   scroll-margin-top: 24px;
 }
@@ -679,10 +709,10 @@ svg {
 .paper:last-child { padding-bottom: 0; border-bottom: 0; }
 
 .paper h3 {
-  margin-bottom: 7px;
-  font-size: 14px;
+  margin-bottom: 4px;
+  font-size: 15px;
   font-weight: 500;
-  line-height: 1.6;
+  line-height: 1.55;
   letter-spacing: -.005em;
   text-wrap: pretty;
 }
@@ -706,7 +736,7 @@ svg {
   padding-inline: 5px;
   border: 1px solid var(--line);
   border-radius: 3px;
-  font-size: 10px;
+  font-size: 11px;
   line-height: 1.5;
 }
 
@@ -727,19 +757,57 @@ summary::marker {
   font-size: .8em;
 }
 
-.paper-details > summary { margin-top: 3px; }
+.paper-details > summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2px 18px;
+  width: 100%;
+  min-height: 44px;
+  margin-top: 0;
+  padding-block: 5px;
+  list-style: none;
+}
+
+.paper-details > summary::-webkit-details-marker { display: none; }
+
+.paper-details > summary .paper-meta {
+  flex: 1 1 22rem;
+  min-width: 0;
+}
+
+.paper-detail-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: auto;
+  color: var(--secondary);
+  white-space: nowrap;
+}
+
+.paper-detail-label svg {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+  transition: transform .2s ease;
+}
+
+.paper-details[open] .paper-detail-label svg { transform: rotate(90deg); }
+.paper-details > summary:hover .paper-detail-label { color: var(--accent); }
 
 .paper-body {
-  padding-block: 1px 7px;
+  max-width: 72ch;
+  padding-block: 8px 4px;
   color: var(--secondary);
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.75;
 }
 
 .paper-body p { margin-block: 0 10px; }
 
 .paper .authors {
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.75;
 }
 
@@ -783,29 +851,29 @@ summary::marker {
 
 /* A short education record keeps methods within reach. */
 .experience-row {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
   align-items: baseline;
-  justify-content: space-between;
   gap: 24px;
-  padding-block: 12px;
+  padding-block: 10px;
 }
 
 .experience-row h3 {
   margin-bottom: 3px;
-  font-size: 13px;
-  font-weight: 500;
+  font-size: 14px;
+  font-weight: 600;
   line-height: 1.6;
 }
 
 .experience-row p {
   margin: 0;
   color: var(--secondary);
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.75;
 }
 
 .experience-row .experience-detail {
-  max-width: 56ch;
+  max-width: 65ch;
   margin-top: 4px;
 }
 
@@ -814,7 +882,7 @@ summary::marker {
 .date {
   flex-shrink: 0;
   color: var(--secondary);
-  font-size: 11px;
+  font-size: 12px;
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
@@ -833,7 +901,7 @@ summary::marker {
   grid-template-columns: 70px minmax(0, 1fr);
   gap: 12px;
   margin-block: 10px;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.75;
 }
 
@@ -848,7 +916,7 @@ summary::marker {
   max-width: 65ch;
   margin: 13px 0 0;
   color: var(--secondary);
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.7;
 }
 
@@ -862,14 +930,17 @@ summary::marker {
   max-width: 60ch;
   margin-bottom: 15px;
   color: var(--secondary);
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.75;
 }
 
 .email-link {
   display: inline-block;
-  padding-block: 4px;
-  font-size: 14px;
+  min-height: 44px;
+  padding-block: 7px;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -.01em;
   overflow-wrap: anywhere;
   text-decoration: none;
 }
@@ -879,7 +950,7 @@ summary::marker {
   flex-wrap: wrap;
   align-items: center;
   gap: 0 20px;
-  margin-top: 13px;
+  margin-top: 8px;
   font-size: 12px;
 }
 
@@ -952,8 +1023,7 @@ footer a {
 
 /* Collapse by reading relationship, retaining source and focus order. */
 @media (min-width: 1200px) {
-  .page { margin-top: 16px; }
-  .intro { padding-top: 20px; }
+  .intro { padding-top: 24px; }
 }
 
 @media (max-width: 700px) {
@@ -964,9 +1034,14 @@ footer a {
   }
 
   .page { max-width: 590px; }
-  .intro { column-gap: 24px; }
-  .intro h1 { font-size: 24px; }
+  .intro-copy { column-gap: 24px; }
+  .intro h1 { font-size: 30px; }
   .intro-links { gap: 0 14px; }
+  .capability-strip { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .capability-row { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 16px; padding-block: 6px; }
+  .capability-row dt { margin: 0; }
+  .research-panel-heading { display: block; }
+  .research-panel-heading > .chemistry-open { margin-top: 14px; }
   .research-layout { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto; gap: 22px; }
   .research-overview,
   .research-details,
@@ -991,17 +1066,18 @@ footer a {
 }
 
 @media (min-width: 481px) and (max-width: 600px) {
-  :root { --portrait-width: 128px; --portrait-height: 154px; }
-  .intro { grid-template-columns: minmax(0, 1fr); row-gap: 16px; }
-  .portrait { justify-self: center; }
+  :root { --portrait-width: 108px; --portrait-height: 130px; }
+  .intro-copy { display: flow-root; }
+  .portrait { float: right; margin: 0 0 12px 20px; }
+  .intro-links { clear: both; }
 }
 
 @media (max-width: 480px) {
   :root {
     --gutter: 23px;
     --section-space: 30px;
-    --portrait-width: 118px;
-    --portrait-height: 142px;
+    --portrait-width: 96px;
+    --portrait-height: 115px;
   }
 
   .page { border-inline: 0; }
@@ -1014,11 +1090,12 @@ footer a {
     padding-block: 12px 23px;
   }
 
-  .intro h1 { font-size: 24px; }
+  .intro-copy { display: flow-root; }
+  .intro h1 { font-size: clamp(26px, 7.2vw, 30px); }
   .role { margin-bottom: 18px; font-size: 12px; }
-  .intro-copy > p:not(.role) { line-height: 1.8; }
-  .intro-links { margin-top: 10px; gap: 0 16px; }
-  .portrait { justify-self: center; }
+  .intro-copy > p:not(.role) { line-height: 1.7; }
+  .intro-links { clear: both; margin-top: 14px; gap: 0 14px; }
+  .portrait { float: right; margin: 0 0 10px 18px; }
   .capability-strip { padding-top: 14px; }
 
   .capability-row {
@@ -1028,10 +1105,10 @@ footer a {
     font-size: 13px;
   }
 
-  .section-nav { gap: 8px; font-size: 11.5px; }
+  .section-nav { justify-content: space-between; gap: 8px; font-size: 12px; }
   .section-nav .inline-icon { width: 10px; height: 10px; margin-left: 3px; }
   .section-heading { gap: 10px; margin-bottom: 12px; }
-  h2 { font-size: 16px; }
+  h2 { font-size: 19px; }
   .section-intro { margin-bottom: 17px; }
   .research-tabs { gap: 10px; }
 
@@ -1043,7 +1120,7 @@ footer a {
   }
 
   .research-panel-heading { padding-block: 19px 17px; }
-  #research-question { font-size: 18px; }
+  #research-question { font-size: 20px; }
   #research-context { font-size: 12px; }
 
   #device-diagram {
@@ -1104,16 +1181,23 @@ footer a {
   .research-bottom,
   .research-actions { gap: 0 16px; }
 
-  .paper { padding-block: 17px; }
-  .paper h3 { font-size: 14px; line-height: 1.6; }
+  .paper { padding-block: 16px; }
+  .paper h3 { font-size: 15px; line-height: 1.5; }
   .paper-meta { gap: 3px 10px; }
-  .paper-details > summary { margin-top: 2px; }
+  .paper-details > summary { margin-top: 0; }
   .experience-row { gap: 14px; }
   .experience-row--compact { padding-block: 7px; }
   .expertise dl > div { grid-template-columns: 60px minmax(0, 1fr); gap: 10px; }
-  .email-link { font-size: 13px; }
+  .email-link { font-size: 15px; }
   .contact-links { gap: 0 17px; }
   footer { flex-wrap: wrap; gap: 4px 12px; }
+}
+
+@media (max-width: 340px) {
+  :root { --portrait-width: 80px; --portrait-height: 96px; }
+  .portrait { margin-left: 14px; }
+  .intro-links { gap: 0 10px; font-size: 12px; }
+  .intro-links .cv-primary { padding-inline: 12px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1154,8 +1238,10 @@ footer a {
   #share-profile { display: none !important; }
 
   .intro { display: block; padding-block: 0 18px; }
+  .intro-copy { display: block; }
   .capability-strip { margin-top: 15px; }
   .intro-links a { min-height: 0; }
+  .intro-links .cv-primary { padding: 0; border: 0; background: none; color: inherit; }
   .section { padding-block: 20px; }
   .section-heading { break-after: avoid; }
   .research-layout { grid-template-columns: 180px minmax(0, 1fr); gap: 24px; }
