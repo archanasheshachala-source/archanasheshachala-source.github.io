@@ -14,14 +14,14 @@
   <meta property="og:image:alt" content="Archana Sheshachala — Organic materials chemist. Research, publications, and CV.">  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/fonts/fonts.css">
-  <link rel="stylesheet" href="style.css?v=b89addf95a">
-  <link rel="stylesheet" href="chemistry.css?v=2ce419ec80">
-  <link rel="stylesheet" href="cv-preview.css?v=52dea1f607">
+  <link rel="stylesheet" href="style.css?v=efd2bf55a2">
+  <link rel="stylesheet" href="chemistry.css?v=3eafca45e4">
+  <link rel="stylesheet" href="cv-preview.css?v=ab6b5728c4">
   <script src="research.js?v=858ebbce8a" defer></script>
   <script src="app.js?v=3abe2a7914" defer></script>
   <script src="chemistry-scenes.js?v=a6ffde56c4" defer></script>
   <script src="chemistry.js?v=2fb330dd93" defer></script>
-  <script src="cv-preview.js?v=a75cc2f343" defer></script>
+  <script src="cv-preview.js?v=4bbcb8d589" defer></script>
   <link rel="canonical" href="https://archanasheshachala-source.github.io/">
   <meta property="og:url" content="https://archanasheshachala-source.github.io/">
   <meta property="og:image" content="https://archanasheshachala-source.github.io/assets/social-preview.png">
@@ -73,8 +73,13 @@
             <div class="research-panel-heading">
               <h3 id="research-question">Can a transport molecule also interact with surface defects?</h3>
               <p id="research-context" class="research-context">Pyrazine-derived materials · First author · ChemPlusChem, 2025</p>
+              <button id="chemistry-open" class="chemistry-open" type="button" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 8 8 8M8 16l8-8"/><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="18" r="3"/></svg><span>Explore the chemistry</span><svg class="inline-icon" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 11 11 3M4 3h7v7"/></svg></button>
             </div>
             <div class="research-layout">
+              <div class="research-overview research-case">
+                <p id="research-summary">Imperfections at the perovskite surface can cause useful charge to be lost. I studied pyrazine-based molecules whose nitrogen atoms can interact with surface lead sites while the material acts as a hole-transport layer.</p>
+                <p class="research-contribution"><strong id="contribution-label">My contribution:</strong> <span id="research-contribution">Design and synthesis of pyrazine-derived materials, with experimental and theoretical analysis of their interfacial behaviour.</span></p>
+              </div>
               <figure id="device-diagram" class="device-diagram" data-focus="interface" aria-label="Simplified n-i-p solar-cell schematic">
                 <div class="device-schematic">
                   <div class="device-stack">
@@ -104,12 +109,9 @@
                   <p class="mechanism-caption">Conceptual spiro-free architecture; not a molecular structure.</p>
                 </div>
                 <figcaption id="diagram-caption">The highlighted boundary is the perovskite/organic-layer interface studied in this work. Schematic, not to scale.</figcaption>
-                <button id="chemistry-open" class="chemistry-open" type="button" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 8 8 8M8 16l8-8"/><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="18" r="3"/></svg><span>Explore the chemistry</span><svg class="inline-icon" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 11 11 3M4 3h7v7"/></svg></button>
               </figure>
 
-              <div class="research-case">
-                <p id="research-summary">Imperfections at the perovskite surface can cause useful charge to be lost. I studied pyrazine-based molecules whose nitrogen atoms can interact with surface lead sites while the material acts as a hole-transport layer.</p>
-                <p class="research-contribution"><strong id="contribution-label">My contribution:</strong> <span id="research-contribution">Design and synthesis of pyrazine-derived materials, with experimental and theoretical analysis of their interfacial behaviour.</span></p>
+              <div class="research-details research-case">
                 <div class="research-evidence">
                   <h4>What the evidence shows</h4>
                   <p id="research-evidence-summary">Interaction experiments, spectroscopy, and modelling supported nitrogen–lead interaction and a role in charge transfer. The devices showed moderate efficiency.</p>

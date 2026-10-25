@@ -10,6 +10,7 @@
   const pageUrls = [1, 2].map(page =>
     new URL(`assets/cv-page-${page}.png?v=de7d7bfb16`, document.baseURI));
   if ([pdfUrl, ...pageUrls].some(url => url.origin !== location.origin)) return;
+  const phoneLayout = matchMedia("(max-width: 600px)");
 
   let dialog;
   let lastOpener = null;
@@ -37,16 +38,17 @@
             <p>Archana Sheshachala · 2 pages</p>
           </div>
           <div class="cv-preview-actions">
+            <a id="cv-preview-original" class="cv-preview-action" target="_blank" rel="noopener noreferrer">Open original PDF</a>
             <a id="cv-preview-download" class="cv-preview-action" download>Download PDF</a>
-            <a id="cv-preview-original" class="cv-preview-action" target="_blank" rel="noopener noreferrer">Open PDF</a>
             <button id="cv-preview-zoom" class="cv-preview-action cv-preview-zoom" type="button" aria-pressed="false">Zoom in</button>
           </div>
           <button id="cv-preview-close" class="cv-preview-close" type="button" autofocus>Close</button>
         </header>
         <div id="cv-preview-body" class="cv-preview-body" tabindex="0" aria-label="Two-page CV preview">
           <p id="cv-preview-note" class="cv-preview-note">Open the PDF for selectable text.</p>
+          <button id="cv-preview-toggle" class="cv-preview-toggle" type="button" aria-expanded="false" aria-controls="cv-preview-pages" hidden>Preview pages here</button>
           <p id="cv-preview-status" class="cv-preview-status" role="status" aria-live="polite"></p>
-          <div class="cv-preview-pages"></div>
+          <div id="cv-preview-pages" class="cv-preview-pages"></div>
         </div>
       </div>`;
     const get = id => dialog.querySelector(`#${id}`);
@@ -66,7 +68,7 @@
       } else {
         status.textContent = loading ? "Loading CV preview…" : "";
       }
-      status.hidden = !status.textContent;
+      status.hidden = !status.textContent || dialog.dataset.preview !== "true";
     }
 
     const images = pageUrls.map((url, index) => {
@@ -107,10 +109,30 @@
 
     document.body.append(dialog);
     const zoomButton = get("cv-preview-zoom");
+    const previewToggle = get("cv-preview-toggle");
+    function updateNote() {
+      get("cv-preview-note").textContent = !phoneLayout.matches ?
+        "Open the PDF for selectable text." : dialog.dataset.preview === "true" ?
+        "Use Open original PDF for full-size reading, or zoom into a page below." :
+        "Open the PDF for full-size reading, or preview the pages here.";
+    }
+    function setPreview(visible) {
+      dialog.dataset.preview = String(visible);
+      pageContainer.hidden = !visible;
+      zoomButton.hidden = !visible;
+      previewToggle.setAttribute("aria-expanded", String(visible));
+      previewToggle.textContent = visible ? "Hide page preview" : "Preview pages here";
+      updateNote();
+      if (visible) loadPages();
+      else get("cv-preview-status").hidden = true;
+      get("cv-preview-body").scrollTop = 0;
+      get("cv-preview-body").scrollLeft = 0;
+    }
     function setZoom(zoomed) {
       const body = get("cv-preview-body");
       const viewportTop = body.getBoundingClientRect().top + body.clientTop;
-      const visiblePages = images.filter(image => !image.parentElement.hidden);
+      const visiblePages = images.filter(image =>
+        !image.parentElement.hidden && image.getClientRects().length > 0);
       const page = visiblePages.find(image =>
         image.getBoundingClientRect().bottom > viewportTop) ||
         visiblePages[visiblePages.length - 1];
@@ -131,6 +153,18 @@
     }
     zoomButton.addEventListener("click", () => {
       setZoom(dialog.dataset.zoom !== "true");
+    });
+    previewToggle.addEventListener("click", () => {
+      setPreview(dialog.dataset.preview !== "true");
+      setZoom(false);
+    });
+    phoneLayout.addEventListener("change", event => {
+      if (!dialog.open) return;
+      const toggleHadFocus = document.activeElement === previewToggle;
+      previewToggle.hidden = !event.matches;
+      if (!event.matches && dialog.dataset.preview !== "true") setPreview(true);
+      updateNote();
+      if (!event.matches && toggleHadFocus) get("cv-preview-body").focus({ preventScroll: true });
     });
     get("cv-preview-close").addEventListener("click", () => dialog.close());
     dialog.addEventListener("close", () => {
@@ -153,11 +187,12 @@
         };
         style.setProperty("overflow", "hidden");
         lastOpener = trigger;
+        previewToggle.hidden = !phoneLayout.matches;
+        setPreview(!phoneLayout.matches);
         dialog.showModal();
         setZoom(false);
         get("cv-preview-body").scrollTop = 0;
         trigger.setAttribute("aria-expanded", "true");
-        loadPages();
         event.preventDefault();
       } catch {
         restoreScroll();

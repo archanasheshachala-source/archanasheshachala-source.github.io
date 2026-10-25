@@ -365,9 +365,14 @@ svg {
 .research-layout {
   display: grid;
   grid-template-columns: 214px minmax(0, 1fr);
-  gap: 28px;
+  grid-template-rows: min-content 1fr;
+  gap: 0 28px;
   align-items: start;
 }
+
+.research-overview { grid-column: 2; grid-row: 1; }
+.research-details { grid-column: 2; grid-row: 2; }
+.research-layout > #device-diagram { grid-column: 1; grid-row: 1 / span 2; }
 
 .research-case {
   min-width: 0;
@@ -648,7 +653,7 @@ svg {
   justify-content: center;
   gap: 8px;
   min-height: 44px;
-  margin-top: 17px;
+  margin-top: 14px;
   padding: 8px 10px;
   border: 1px solid var(--line);
   border-radius: 5px;
@@ -690,11 +695,12 @@ svg {
   align-items: center;
   gap: 3px 12px;
   color: var(--secondary);
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1.7;
 }
 
 .authorship { color: var(--accent); }
+.paper[data-first="true"] .authorship { font-weight: 600; }
 
 .status-label {
   padding-inline: 5px;
@@ -961,7 +967,11 @@ footer a {
   .intro { column-gap: 24px; }
   .intro h1 { font-size: 24px; }
   .intro-links { gap: 0 14px; }
-  .research-layout { grid-template-columns: 1fr; gap: 22px; }
+  .research-layout { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto; gap: 22px; }
+  .research-overview,
+  .research-details,
+  .research-layout > #device-diagram { grid-column: 1; grid-row: auto; }
+  .research-overview .research-contribution { margin-bottom: 0; }
 
   #device-diagram {
     display: grid;
@@ -969,8 +979,6 @@ footer a {
     column-gap: 24px;
     align-items: start;
   }
-
-  .chemistry-open { grid-column: 2; justify-self: start; }
 
   .device-schematic {
     grid-column: 1;
@@ -983,7 +991,8 @@ footer a {
 }
 
 @media (min-width: 481px) and (max-width: 600px) {
-  .intro { grid-template-columns: minmax(0, 1fr); }
+  :root { --portrait-width: 128px; --portrait-height: 154px; }
+  .intro { grid-template-columns: minmax(0, 1fr); row-gap: 16px; }
   .portrait { justify-self: center; }
 }
 
@@ -991,8 +1000,8 @@ footer a {
   :root {
     --gutter: 23px;
     --section-space: 30px;
-    --portrait-width: 184px;
-    --portrait-height: 202px;
+    --portrait-width: 118px;
+    --portrait-height: 142px;
   }
 
   .page { border-inline: 0; }
@@ -1001,7 +1010,7 @@ footer a {
 
   .intro {
     grid-template-columns: minmax(0, 1fr);
-    gap: 22px;
+    gap: 16px;
     padding-block: 12px 23px;
   }
 
@@ -1141,6 +1150,7 @@ footer a {
   .toast,
   .skip-link,
   .copy-citation,
+  .chemistry-open,
   #share-profile { display: none !important; }
 
   .intro { display: block; padding-block: 0 18px; }

@@ -40,8 +40,8 @@ The publishing archive contains the contents of `dist/`. Source context, researc
 ## Interaction and accessibility
 
 - The portrait is a plain, noninteractive image without a frame, background panel, caption, or effect control. The compact utility row contains only location and theme.
-- “View CV” opens a focused, scrollable preview of the two original CV pages. Download PDF and Open PDF remain available. Escape or Close returns focus to the link; without JavaScript, the same link opens the PDF directly.
-- Use the research study tabs or Left/Right/Home/End keys. The schematic emphasis, contribution, and evidence change together. Native disclosures reveal methods and technical depth.
+- On desktop, “View CV” opens the original page preview. On phones, a compact sheet prioritizes Open original PDF for full-size reading and offers optional Preview pages here and download actions. Images load only when previewed. Escape or Close returns focus; without JavaScript, the link opens the original PDF directly.
+- Use the research study tabs or Left/Right/Home/End keys. The schematic emphasis, contribution, and evidence change together. The chemistry action is beside the study context; mobile reading order puts summary and contribution before the schematic. Native disclosures reveal methods and technical depth.
 - The diagram is a simplified, labelled n-i-p architecture. Its interaction motifs are conceptual explanations, not chemical structures or measured simulations.
 - “Explore the chemistry” opens nine coloured scenes across three studies. Pyrazine is shown as a real 1,4-diazine core motif, not a complete studied molecule; the star-shaped and donor–acceptor–donor views are explicitly conceptual topologies. Playback is user-started, finite, and stops on navigation, close, or visibility loss. Reduced motion retains static steps and hides playback.
 - All five publication titles remain visible; native disclosures contain full authors, significance, and citation copying. Citation links open, scroll to, and focus the appropriate disclosure. Clipboard actions work on supported secure browser origins.
