@@ -18,7 +18,7 @@
   // A single study selection changes the explanation, schematic, and evidence.
   const tabs = [...document.querySelectorAll("[data-topic]")];
   const topics = window.researchTopics;
-  let currentTopic = "pyrazine";
+  let currentTopic = "star";
   const requiredFields = ["question", "context", "summary", "contributionLabel",
     "contribution", "focus", "diagramCaption", "evidenceSummary",
     "comparisonLabel", "evidenceNote", "technical", "methods", "paperHref",
@@ -46,6 +46,7 @@
     setText("diagram-caption", topic.diagramCaption);
     setText("research-evidence-summary", topic.evidenceSummary);
     setText("research-comparison-label", topic.comparisonLabel);
+    setText("research-comparison-column", topic.comparisonColumn || "Material");
     setText("research-evidence-note", topic.evidenceNote);
     setText("research-technical-copy", topic.technical);
     setText("research-methods", topic.methods);

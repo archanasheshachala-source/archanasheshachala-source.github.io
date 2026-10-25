@@ -1,6 +1,65 @@
 "use strict";
 
 window.chemistryScenes = {
+  "star": {
+    "title": "Dopant-free transport",
+    "context": "Carbazole–triphenylamine hybrids · First author · Carbon Energy, accepted",
+    "paperHref": "#paper-star",
+    "paperId": "paper-star",
+    "steps": [
+      {
+        "title": "Molecular idea",
+        "body": "SS1 and SS2 share a carbazole core with two thiophene-linked triphenylamine (TPA) arms and a third methoxy-substituted TPA attached at carbazole nitrogen. Methoxy substitution on the two terminal arms distinguishes SS1 from SS2.",
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"chemistry-svg\" viewBox=\"0 0 660 460\" role=\"img\" aria-labelledby=\"chem-star-1-title chem-star-1-desc\"><title id=\"chem-star-1-title\">The SS1 and SS2 molecular architecture</title><desc id=\"chem-star-1-desc\">Two thiophene spacers connect carbazole positions 3 and 6 to terminal triphenylamine donors. A third methoxy-substituted triphenylamine arm is attached at carbazole nitrogen without a thiophene spacer. Terminal donors are methoxy-substituted in SS1 and unsubstituted in SS2.</desc>\n    <text class=\"chemistry-stage-title\" x=\"330\" y=\"46\" text-anchor=\"middle\">The SS1 / SS2 molecular design</text>\n    <text class=\"chemistry-muted-label\" x=\"330\" y=\"76\" text-anchor=\"middle\">Two thiophene-linked arms + one N-linked arm</text>\n    <g class=\"chemistry-reveal\">\n      <path class=\"chemistry-framework chemistry-trace\" pathLength=\"1\" d=\"M102 182H128M238 182H250M410 182H422M532 182H558M330 220V244M330 276V316\"/>\n      <rect class=\"chemistry-organic-node\" x=\"16\" y=\"147\" width=\"86\" height=\"70\" rx=\"8\"/>\n      <rect class=\"chemistry-layer-teal\" x=\"128\" y=\"158\" width=\"110\" height=\"48\" rx=\"8\"/>\n      <rect class=\"chemistry-organic-node\" x=\"250\" y=\"147\" width=\"160\" height=\"73\" rx=\"8\"/>\n      <rect class=\"chemistry-layer-teal\" x=\"422\" y=\"158\" width=\"110\" height=\"48\" rx=\"8\"/>\n      <rect class=\"chemistry-organic-node\" x=\"558\" y=\"147\" width=\"86\" height=\"70\" rx=\"8\"/>\n      <text class=\"chemistry-label\" x=\"59\" y=\"177\" text-anchor=\"middle\">TPA</text><text class=\"chemistry-small-label\" x=\"59\" y=\"201\" text-anchor=\"middle\">donor</text>\n      <text class=\"chemistry-small-label\" x=\"183\" y=\"188\" text-anchor=\"middle\">Thiophene</text>\n      <text class=\"chemistry-label\" x=\"330\" y=\"178\" text-anchor=\"middle\">Carbazole</text><text class=\"chemistry-small-label\" x=\"330\" y=\"203\" text-anchor=\"middle\">3,6-linked arms</text>\n      <text class=\"chemistry-small-label\" x=\"477\" y=\"188\" text-anchor=\"middle\">Thiophene</text>\n      <text class=\"chemistry-label\" x=\"601\" y=\"177\" text-anchor=\"middle\">TPA</text><text class=\"chemistry-small-label\" x=\"601\" y=\"201\" text-anchor=\"middle\">donor</text>\n      <circle class=\"chemistry-surface-site\" cx=\"330\" cy=\"260\" r=\"16\"/><text class=\"chemistry-atom\" x=\"330\" y=\"268\" text-anchor=\"middle\">N</text>\n      <text class=\"chemistry-muted-label\" x=\"359\" y=\"296\">N-aryl linkage</text>\n      <rect class=\"chemistry-organic-node\" x=\"216\" y=\"316\" width=\"228\" height=\"66\" rx=\"8\"/>\n      <text class=\"chemistry-label\" x=\"330\" y=\"345\" text-anchor=\"middle\">Methoxy-TPA</text><text class=\"chemistry-small-label\" x=\"330\" y=\"369\" text-anchor=\"middle\">Same N-linked arm in both</text>\n    </g>\n    <text class=\"chemistry-muted-label\" x=\"330\" y=\"419\" text-anchor=\"middle\">SS1: methoxy-TPA terminal donors</text>\n    <text class=\"chemistry-muted-label\" x=\"330\" y=\"444\" text-anchor=\"middle\">SS2: unsubstituted TPA terminal donors</text></svg>",
+        "description": "The carbazole–thiophene backbone carries two terminal donor arms; the third arm attaches at carbazole nitrogen.",
+        "scopeNote": "Architecture schematic based on the thesis, Chapter 3, Figure 3.1. The N-linked arm is not a fully conjugated extension; atom-by-atom structures are not shown.",
+        "legend": [
+          {
+            "color": "violet",
+            "label": "Carbazole and TPA donor units"
+          },
+          {
+            "color": "teal",
+            "label": "Thiophene spacers / N attachment"
+          }
+        ]
+      },
+      {
+        "title": "In the device",
+        "body": "The thesis uses an ITO/SnO₂/perovskite/HTM/Au n-i-p stack. SS1 or SS2 forms the dopant-free hole-transport layer. Molecular substitution was studied alongside film formation, charge extraction, and recombination at this contact.",
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"chemistry-svg\" viewBox=\"0 0 660 460\" role=\"img\" aria-labelledby=\"chem-star-2-title chem-star-2-desc\"><title id=\"chem-star-2-title\">Dopant-free SS1 or SS2 in the thesis device</title><desc id=\"chem-star-2-desc\">A labelled n-i-p stack: gold, dopant-free SS1 or SS2, perovskite, tin oxide and ITO on glass. Holes move to gold, electrons to ITO, and light enters through the glass.</desc><defs><marker id=\"chem-star-2-arrow\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto-start-reverse\"><path d=\"M1 1 9 5 1 9Z\" class=\"chemistry-arrow-tip\"/></marker></defs>\n    <text class=\"chemistry-stage-title\" x=\"330\" y=\"48\" text-anchor=\"middle\">From molecular design to hole extraction</text>\n    <g class=\"chemistry-reveal\">\n      <rect class=\"chemistry-layer-neutral\" x=\"168\" y=\"83\" width=\"324\" height=\"32\" rx=\"3\"/><text class=\"chemistry-small-label\" x=\"330\" y=\"105\" text-anchor=\"middle\">Au · top electrode</text>\n      <rect class=\"chemistry-layer-organic\" x=\"168\" y=\"125\" width=\"324\" height=\"79\" rx=\"4\"/><text class=\"chemistry-label\" x=\"330\" y=\"157\" text-anchor=\"middle\">SS1 / SS2</text><text class=\"chemistry-small-label\" x=\"330\" y=\"186\" text-anchor=\"middle\">Hole transport · no added dopants</text>\n      <path class=\"chemistry-interface-line\" d=\"M168 211H492\"/>\n      <rect class=\"chemistry-layer-perovskite\" x=\"168\" y=\"220\" width=\"324\" height=\"70\" rx=\"4\"/><text class=\"chemistry-label\" x=\"330\" y=\"261\" text-anchor=\"middle\">Perovskite absorber</text>\n      <rect class=\"chemistry-layer-teal\" x=\"168\" y=\"300\" width=\"324\" height=\"30\" rx=\"3\"/><text class=\"chemistry-small-label\" x=\"330\" y=\"321\" text-anchor=\"middle\">SnO₂ · electron transport</text>\n      <rect class=\"chemistry-layer-glass\" x=\"168\" y=\"340\" width=\"324\" height=\"30\" rx=\"3\"/><text class=\"chemistry-small-label\" x=\"330\" y=\"361\" text-anchor=\"middle\">ITO / glass</text>\n    </g>\n    <g class=\"chemistry-reveal chemistry-reveal--late\">\n      <path class=\"chemistry-charge-path chemistry-trace\" pathLength=\"1\" d=\"M470 258V95\" marker-end=\"url(#chem-star-2-arrow)\"/><text class=\"chemistry-path-label\" x=\"513\" y=\"165\">h⁺</text>\n      <path class=\"chemistry-charge-path chemistry-trace\" pathLength=\"1\" d=\"M190 237V356\" marker-end=\"url(#chem-star-2-arrow)\"/><text class=\"chemistry-path-label\" x=\"127\" y=\"318\">e⁻</text>\n      <path class=\"chemistry-charge-path chemistry-trace\" pathLength=\"1\" d=\"M330 414V383\" marker-end=\"url(#chem-star-2-arrow)\"/><text class=\"chemistry-path-label\" x=\"350\" y=\"408\">Light</text>\n    </g></svg>",
+        "description": "The studied molecules sit between the perovskite absorber and gold electrode, extracting holes without added dopants.",
+        "scopeNote": "Thesis device architecture, not to scale. Charge arrows show direction only; packing and transport rates are not simulated.",
+        "legend": [
+          {
+            "color": "violet",
+            "label": "Dopant-free SS1 / SS2 layer"
+          },
+          {
+            "color": "teal",
+            "label": "Perovskite and contact"
+          },
+          {
+            "color": "amber",
+            "label": "Light and charge directions"
+          }
+        ]
+      },
+      {
+        "title": "Evidence",
+        "body": "SS1 reached 19.24% PCE in a mixed-cation/mixed-halide cell. Separately, a 1 cm² MAPbI₃ device reached 17.25%. Unencapsulated SS1 cells retained >91% of initial efficiency after 1,500 h of storage at ~28 °C and ~65% relative humidity.",
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"chemistry-svg\" viewBox=\"0 0 660 460\" role=\"img\" aria-labelledby=\"chem-star-3-title chem-star-3-desc\"><title id=\"chem-star-3-title\">Three distinct SS1 device results</title><desc id=\"chem-star-3-desc\">SS1: 19.24 percent power conversion efficiency in a mixed-cation/mixed-halide small-area cell; 17.25 percent in a separate one square centimetre MAPbI3 cell; over 91 percent initial efficiency retained after 1,500 hours unencapsulated storage. These are separate test conditions.</desc>\n    <g class=\"chemistry-reveal\">\n      <text class=\"chemistry-stage-title\" x=\"48\" y=\"55\">Dopant-free SS1: device evidence</text>\n      <text class=\"chemistry-muted-label\" x=\"48\" y=\"84\">Separate device configurations and storage test</text>\n      <path class=\"chemistry-rule\" d=\"M48 107H612M48 205H612M48 303H612M48 401H612\"/>\n      <text class=\"chemistry-label\" x=\"48\" y=\"144\">Mixed-cation / mixed-halide</text><text class=\"chemistry-small-label\" x=\"48\" y=\"175\">Small-area cell · power conversion efficiency</text><text class=\"chemistry-evidence-value\" x=\"612\" y=\"160\" text-anchor=\"end\">19.24%</text>\n      <text class=\"chemistry-label\" x=\"48\" y=\"242\">MAPbI₃ · 1 cm² active area</text><text class=\"chemistry-small-label\" x=\"48\" y=\"273\">Larger-area cell · power conversion efficiency</text><text class=\"chemistry-evidence-value\" x=\"612\" y=\"258\" text-anchor=\"end\">17.25%</text>\n      <text class=\"chemistry-label\" x=\"48\" y=\"340\">1,500 h · unencapsulated storage</text><text class=\"chemistry-small-label\" x=\"48\" y=\"371\">Initial efficiency retained · ~28 °C / ~65% RH</text><text class=\"chemistry-evidence-value\" x=\"612\" y=\"356\" text-anchor=\"end\">&gt;91%</text>\n      <text class=\"chemistry-muted-label\" x=\"48\" y=\"434\">Thesis · Table 3.4 and Figures 3.18–3.20</text>\n    </g></svg>",
+        "description": "Efficiency, larger active area, and unencapsulated storage were evaluated under their respective test conditions.",
+        "scopeNote": "The 19.24% result is not the 1 cm² result. The 1,500 h retention is a storage test, not continuous operational lifetime.",
+        "legend": [
+          {
+            "color": "violet",
+            "label": "SS1 device results"
+          }
+        ]
+      }
+    ]
+  },
   "pyrazine": {
     "title": "Interface chemistry",
     "context": "Pyrazine-derived materials · First author · ChemPlusChem, 2025",
@@ -9,7 +68,7 @@ window.chemistryScenes = {
     "steps": [
       {
         "title": "Molecular idea",
-        "body": "The pyrazine core is a six-membered aromatic ring with nitrogen atoms opposite one another. Those nitrogen sites motivated a study of how a transport molecule could also interact with the perovskite surface.",
+        "body": "Pyrazine is a comparatively underexplored core for hole-transport materials. Its six-membered aromatic ring contains two opposing nitrogen atoms, motivating the study of both hole extraction and interactions with surface lead sites.",
         "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"chemistry-svg\" viewBox=\"0 0 660 460\" role=\"img\" aria-labelledby=\"chem-pyrazine-1-title chem-pyrazine-1-desc\"><title id=\"chem-pyrazine-1-title\">Pyrazine core motif</title><desc id=\"chem-pyrazine-1-desc\">A six-membered aromatic pyrazine ring with opposing nitrogen atoms. Only the core motif is shown, not a full studied material.</desc><defs><marker id=\"chem-pyrazine-1-arrow\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto-start-reverse\"><path d=\"M1 1 9 5 1 9Z\" class=\"chemistry-arrow-tip\"/></marker></defs><text class=\"chemistry-stage-title\" x=\"330\" y=\"66\" text-anchor=\"middle\">A nitrogen-bearing aromatic core</text><g class=\"chemistry-reveal\"><g transform=\"translate(330 222) scale(1.05)\"><path class=\"chemistry-framework chemistry-trace\" pathLength=\"1\" d=\"M0-104 90-52V52L0 104-90 52V-52Z\"/><path class=\"chemistry-framework chemistry-trace\" pathLength=\"1\" d=\"M19-80 67-52M67 51 19 79M-73 39V-39\"/><circle class=\"chemistry-atom-mask\" cx=\"0\" cy=\"-104\" r=\"17\"/><circle class=\"chemistry-atom-mask\" cx=\"0\" cy=\"104\" r=\"17\"/><text class=\"chemistry-atom\" x=\"0\" y=\"-103\" text-anchor=\"middle\" dominant-baseline=\"middle\">N</text><text class=\"chemistry-atom\" x=\"0\" y=\"105\" text-anchor=\"middle\" dominant-baseline=\"middle\">N</text></g></g><text class=\"chemistry-muted-label\" x=\"330\" y=\"396\" text-anchor=\"middle\">Pyrazine · 1,4-diazine core motif</text></svg>",
         "description": "Opposing nitrogen atoms are highlighted in the pyrazine ring.",
         "scopeNote": "A real core motif, not the complete structure of a studied material. Substituents are omitted.",
@@ -59,61 +118,6 @@ window.chemistryScenes = {
           {
             "color": "amber",
             "label": "Light and charge directions"
-          }
-        ]
-      }
-    ]
-  },
-  "star": {
-    "title": "Dopant-free transport",
-    "context": "Carbazole–triphenylamine hybrids · First author · Carbon Energy, accepted",
-    "paperHref": "#paper-star",
-    "paperId": "paper-star",
-    "steps": [
-      {
-        "title": "Molecular idea",
-        "body": "Star-shaped organic materials connect a central unit with peripheral donor groups. The molecular design was studied in relation to film formation, charge extraction, and hole transport without added dopants.",
-        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"chemistry-svg\" viewBox=\"0 0 660 460\" role=\"img\" aria-labelledby=\"chem-star-1-title chem-star-1-desc\"><title id=\"chem-star-1-title\">Conceptual branched architecture</title><desc id=\"chem-star-1-desc\">A labelled central unit connects to three peripheral donor groups. This is a conceptual branched architecture, not a chemical structure.</desc><defs><marker id=\"chem-star-1-arrow\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto-start-reverse\"><path d=\"M1 1 9 5 1 9Z\" class=\"chemistry-arrow-tip\"/></marker></defs><text class=\"chemistry-stage-title\" x=\"330\" y=\"63\" text-anchor=\"middle\">A branched organic architecture</text><g class=\"chemistry-reveal\"><g transform=\"translate(330 250) scale(1)\"><path class=\"chemistry-framework chemistry-trace\" pathLength=\"1\" d=\"M0-32V-80M-43 26-84 55M43 26 84 55\"/><rect class=\"chemistry-organic-node\" x=\"-50\" y=\"-32\" width=\"100\" height=\"64\" rx=\"12\"/><circle class=\"chemistry-organic-node\" cx=\"0\" cy=\"-120\" r=\"40\"/><circle class=\"chemistry-organic-node\" cx=\"-120\" cy=\"78\" r=\"40\"/><circle class=\"chemistry-organic-node\" cx=\"120\" cy=\"78\" r=\"40\"/><text class=\"chemistry-small-label\" x=\"0\" y=\"-5\" text-anchor=\"middle\">Central</text><text class=\"chemistry-small-label\" x=\"0\" y=\"16\" text-anchor=\"middle\">unit</text><text class=\"chemistry-small-label\" x=\"0\" y=\"-115\" text-anchor=\"middle\">Donor</text><text class=\"chemistry-small-label\" x=\"-120\" y=\"83\" text-anchor=\"middle\">Donor</text><text class=\"chemistry-small-label\" x=\"120\" y=\"83\" text-anchor=\"middle\">Donor</text></g></g><text class=\"chemistry-muted-label\" x=\"330\" y=\"423\" text-anchor=\"middle\">Central unit + peripheral donor groups</text></svg>",
-        "description": "The central unit and donor groups are shown as labelled conceptual building blocks.",
-        "scopeNote": "Conceptual architecture, not the chemical structure of SS1 or SS2.",
-        "legend": [
-          {
-            "color": "violet",
-            "label": "Conceptual organic architecture"
-          }
-        ]
-      },
-      {
-        "title": "In the device",
-        "body": "The molecules form the organic hole-transport layer between the perovskite and top electrode. In this study, that layer extracted holes without adding dopants.",
-        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"chemistry-svg\" viewBox=\"0 0 660 460\" role=\"img\" aria-labelledby=\"chem-star-2-title chem-star-2-desc\"><title id=\"chem-star-2-title\">Dopant-free hole transport</title><desc id=\"chem-star-2-desc\">Conceptual branched motifs occupy the organic hole-transport layer of a simplified n-i-p device. Holes move upward to the top electrode, electrons move down to the transparent electrode, and light enters through the glass below.</desc><defs><marker id=\"chem-star-2-arrow\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto-start-reverse\"><path d=\"M1 1 9 5 1 9Z\" class=\"chemistry-arrow-tip\"/></marker></defs><g class=\"chemistry-reveal\"><rect class=\"chemistry-layer-neutral\" x=\"168\" y=\"76\" width=\"324\" height=\"26\" rx=\"3\"/><text class=\"chemistry-small-label\" x=\"330\" y=\"94\" text-anchor=\"middle\">Top electrode</text><rect class=\"chemistry-layer-organic\" x=\"168\" y=\"112\" width=\"324\" height=\"82\" rx=\"4\"/><text class=\"chemistry-label\" x=\"330\" y=\"135\" text-anchor=\"middle\">Dopant-free organic layer</text><g class=\"chemistry-reveal\"><g transform=\"translate(240 166) scale(0.18)\"><path class=\"chemistry-framework chemistry-trace\" pathLength=\"1\" d=\"M0-32V-80M-43 26-84 55M43 26 84 55\"/><rect class=\"chemistry-organic-node\" x=\"-50\" y=\"-32\" width=\"100\" height=\"64\" rx=\"12\"/><circle class=\"chemistry-organic-node\" cx=\"0\" cy=\"-120\" r=\"40\"/><circle class=\"chemistry-organic-node\" cx=\"-120\" cy=\"78\" r=\"40\"/><circle class=\"chemistry-organic-node\" cx=\"120\" cy=\"78\" r=\"40\"/></g></g><g class=\"chemistry-reveal\"><g transform=\"translate(330 166) scale(0.18)\"><path class=\"chemistry-framework chemistry-trace\" pathLength=\"1\" d=\"M0-32V-80M-43 26-84 55M43 26 84 55\"/><rect class=\"chemistry-organic-node\" x=\"-50\" y=\"-32\" width=\"100\" height=\"64\" rx=\"12\"/><circle class=\"chemistry-organic-node\" cx=\"0\" cy=\"-120\" r=\"40\"/><circle class=\"chemistry-organic-node\" cx=\"-120\" cy=\"78\" r=\"40\"/><circle class=\"chemistry-organic-node\" cx=\"120\" cy=\"78\" r=\"40\"/></g></g><g class=\"chemistry-reveal\"><g transform=\"translate(420 166) scale(0.18)\"><path class=\"chemistry-framework chemistry-trace\" pathLength=\"1\" d=\"M0-32V-80M-43 26-84 55M43 26 84 55\"/><rect class=\"chemistry-organic-node\" x=\"-50\" y=\"-32\" width=\"100\" height=\"64\" rx=\"12\"/><circle class=\"chemistry-organic-node\" cx=\"0\" cy=\"-120\" r=\"40\"/><circle class=\"chemistry-organic-node\" cx=\"-120\" cy=\"78\" r=\"40\"/><circle class=\"chemistry-organic-node\" cx=\"120\" cy=\"78\" r=\"40\"/></g></g><path class=\"chemistry-interface-line\" d=\"M168 201H492\"/><rect class=\"chemistry-layer-perovskite\" x=\"168\" y=\"210\" width=\"324\" height=\"72\" rx=\"4\"/><text class=\"chemistry-label\" x=\"330\" y=\"252\" text-anchor=\"middle\">Perovskite absorber</text><rect class=\"chemistry-layer-teal\" x=\"168\" y=\"292\" width=\"324\" height=\"28\" rx=\"3\"/><text class=\"chemistry-small-label\" x=\"330\" y=\"311\" text-anchor=\"middle\">Electron-transport layer</text><rect class=\"chemistry-layer-glass\" x=\"168\" y=\"330\" width=\"324\" height=\"28\" rx=\"3\"/><text class=\"chemistry-small-label\" x=\"330\" y=\"349\" text-anchor=\"middle\">Transparent electrode / glass</text></g><g class=\"chemistry-reveal chemistry-reveal--late\"><path class=\"chemistry-charge-path chemistry-trace\" pathLength=\"1\" d=\"M469 250V89\" marker-end=\"url(#chem-star-2-arrow)\"/><text class=\"chemistry-path-label\" x=\"507\" y=\"164\">h⁺</text><path class=\"chemistry-charge-path chemistry-trace\" pathLength=\"1\" d=\"M190 223V344\" marker-end=\"url(#chem-star-2-arrow)\"/><text class=\"chemistry-path-label\" x=\"131\" y=\"309\">e⁻</text><path class=\"chemistry-charge-path chemistry-trace\" pathLength=\"1\" d=\"M330 407V371\" marker-end=\"url(#chem-star-2-arrow)\"/><text class=\"chemistry-path-label\" x=\"350\" y=\"396\">Light</text></g><text class=\"chemistry-muted-label\" x=\"330\" y=\"438\" text-anchor=\"middle\">Hole transport without added dopants</text></svg>",
-        "description": "Branched motifs mark the organic layer; amber arrows show light and charge directions.",
-        "scopeNote": "Device schematic, not to scale. Motifs indicate the material’s role, not molecular packing or measured transport rates.",
-        "legend": [
-          {
-            "color": "violet",
-            "label": "Organic hole-transport layer"
-          },
-          {
-            "color": "teal",
-            "label": "Perovskite and interface"
-          },
-          {
-            "color": "amber",
-            "label": "Light and charge directions"
-          }
-        ]
-      },
-      {
-        "title": "Evidence",
-        "body": "In MAPbI₃ devices, the optimised dopant-free material reached 17.73% power conversion efficiency, compared with 15.76% for undoped Spiro-OMeTAD under identical study conditions.",
-        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"chemistry-svg\" viewBox=\"0 0 660 460\" role=\"img\" aria-labelledby=\"chem-star-3-title chem-star-3-desc\"><title id=\"chem-star-3-title\">MAPbI3 device comparison</title><desc id=\"chem-star-3-desc\">Within-study MAPbI3 device power conversion efficiencies: optimised dopant-free material, 17.73 percent; undoped Spiro-OMeTAD, 15.76 percent. Carbon Energy article accepted.</desc><defs><marker id=\"chem-star-3-arrow\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto-start-reverse\"><path d=\"M1 1 9 5 1 9Z\" class=\"chemistry-arrow-tip\"/></marker></defs><g class=\"chemistry-reveal\"><text class=\"chemistry-stage-title\" x=\"72\" y=\"84\">MAPbI₃ perovskite devices</text><text class=\"chemistry-muted-label\" x=\"72\" y=\"115\">Within-study power conversion efficiency</text><g role=\"table\" aria-label=\"MAPbI₃ perovskite devices\"><text class=\"chemistry-table-header\" x=\"72\" y=\"164\">HOLE-TRANSPORT MATERIAL</text><text class=\"chemistry-table-header\" x=\"588\" y=\"164\" text-anchor=\"end\">PCE</text><path class=\"chemistry-rule\" d=\"M72 184H588M72 274H588M72 354H588\"/><g role=\"row\"><text class=\"chemistry-label\" x=\"72\" y=\"237\" role=\"rowheader\">Optimised dopant-free HTM</text><text class=\"chemistry-evidence-value\" x=\"588\" y=\"240\" text-anchor=\"end\" role=\"cell\">17.73%</text></g><g role=\"row\"><text class=\"chemistry-label\" x=\"72\" y=\"320\" role=\"rowheader\">Undoped Spiro-OMeTAD</text><text class=\"chemistry-evidence-value\" x=\"588\" y=\"323\" text-anchor=\"end\" role=\"cell\">15.76%</text></g></g><text class=\"chemistry-muted-label\" x=\"72\" y=\"392\">Identical study conditions · Carbon Energy, accepted</text></g></svg>",
-        "description": "A direct comparison within the MAPbI₃ device system.",
-        "scopeNote": "A separate mixed-cation/mixed-halide device system reached 19.24% efficiency. The article is accepted.",
-        "legend": [
-          {
-            "color": "violet",
-            "label": "Organic hole-transport materials"
           }
         ]
       }

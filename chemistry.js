@@ -2,7 +2,7 @@
 
 (() => {
   const opener = document.getElementById("chemistry-open");
-  const topicKeys = ["pyrazine", "star", "pyridine"];
+  const topicKeys = ["star", "pyrazine", "pyridine"];
   const scenes = window.chemistryScenes;
   const allowedLegendColors = new Set(["violet", "teal", "amber"]);
 
