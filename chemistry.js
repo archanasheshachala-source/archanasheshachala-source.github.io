@@ -47,7 +47,7 @@
             nonempty(scene.paperHref) && validSource(scene) &&
             Array.isArray(scene.steps) && scene.steps.length === 3 &&
             scene.steps.every(step =>
-              step && ["title", "body", "svg", "description", "scopeNote"]
+              step && typeof step.scopeNote === "string" && ["title", "body", "svg", "description"]
                 .every(field => nonempty(step[field])) &&
               Array.isArray(step.legend) && step.legend.every(item =>
                 item && allowedLegendColors.has(item.color) && nonempty(item.label)));
@@ -205,6 +205,7 @@
       get("chemistry-step-copy").textContent = step.body;
       get("chemistry-description").textContent = step.description;
       get("chemistry-scope").textContent = step.scopeNote;
+      get("chemistry-scope").hidden = !step.scopeNote;
 
       stage.dataset.animate = "false";
       stage.replaceChildren(preparedSvg.get(currentTopic)[currentStep].cloneNode(true));

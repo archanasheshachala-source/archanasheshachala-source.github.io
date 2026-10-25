@@ -23,7 +23,7 @@ window.researchTopics = {
       }
     ],
     "evidenceNote": "Unencapsulated storage: ~28 °C, ~65% relative humidity. The two efficiency results use different absorber compositions and active areas.",
-    "technical": "SS1 and SS2 share a carbazole core with two thiophene-linked triphenylamine arms and an N-linked methoxy-substituted triphenylamine arm. Methoxy substitution on the two terminal arms distinguishes SS1 from SS2; the N-linked arm is not a fully conjugated extension of the backbone. In small-area MAPbI₃ cells (~0.096 cm²), SS1 reached 17.73% PCE versus 15.76% for undoped Spiro-OMeTAD. The separate mixed-cation/mixed-halide cell reached 19.24%, and a 1 cm² MAPbI₃ cell reached 17.25%. Unencapsulated SS1 cells retained >91% of initial PCE after 1,500 h of storage (~28 °C, ~65% RH). These are storage results, distinct from the thesis’s short-duration MPPT and thermal-ageing tests. Source: AS_Defence_Final, Chapter 3, Table 3.4 and Figures 3.18–3.20.",
+    "technical": "SS1 and SS2 share a carbazole core with two thiophene-linked triphenylamine arms and an N-linked methoxy-substituted triphenylamine arm. Methoxy substitution on the two terminal arms distinguishes SS1 from SS2; the N-linked arm is not a fully conjugated extension of the backbone. In small-area MAPbI₃ cells (~0.096 cm²), SS1 reached 17.73% PCE versus 15.76% for undoped Spiro-OMeTAD. The separate mixed-cation/mixed-halide cell reached 19.24%, and a 1 cm² MAPbI₃ cell reached 17.25%. Unencapsulated SS1 cells retained >91% of initial PCE after 1,500 h of storage (~28 °C, ~65% RH).",
     "methods": "Organic synthesis · Spectroscopy · Device fabrication · DFT/TD-DFT",
     "paperHref": "#paper-star",
     "paperLabel": "Publication details",
@@ -52,7 +52,7 @@ window.researchTopics = {
     "context": "Spiro-free PyCNEdTp · Co-author · Chemical Communications, 2026",
     "summary": "Widely used hole-transport materials can have complex spiro-linked structures. In this co-authored study, we explored a donor–acceptor–donor molecule built around a dicyanopyridine core, offering a different molecular route to charge transport.",
     "contributionLabel": "Collaborative work:",
-    "contribution": "A joint experimental and theoretical investigation of a spiro-free hole-transport material. The results describe the collaboration’s work.",
+    "contribution": "A joint experimental and theoretical investigation of a spiro-free hole-transport material.",
     "focus": "architecture",
     "diagramCaption": "The organic layer uses a spiro-free molecule. Device schematic, not to scale.",
     "evidenceSummary": "The study compared PyCNEdTp with Spiro-OMeTAD in n-i-p perovskite solar cells.",
@@ -68,7 +68,7 @@ window.researchTopics = {
       }
     ],
     "evidenceNote": "",
-    "technical": "PyCNEdTp is a spiro-free donor–acceptor–donor material based on a π-conjugated 3,5-dicyanopyridine core. Molecular calculations, energy-level measurements, film characterisation, and n-i-p device studies connected intramolecular charge transfer and molecular electronic structure with charge extraction. The reported 0.2 percentage-point difference alone does not establish statistical superiority.",
+    "technical": "PyCNEdTp is a spiro-free donor–acceptor–donor material based on a π-conjugated 3,5-dicyanopyridine core. Molecular calculations, energy-level measurements, film characterisation, and n-i-p device studies connected intramolecular charge transfer and molecular electronic structure with charge extraction.",
     "methods": "DFT · Spectroscopy · GIWAXS · Device characterisation",
     "paperHref": "https://doi.org/10.1039/D6CC01269H",
     "paperLabel": "Read the paper",
