@@ -6,7 +6,7 @@ window.researchTopics = {
     "context": "Carbazole–triphenylamine hybrids · First author · Carbon Energy, accepted",
     "summary": "I designed star-shaped carbazole–triphenylamine materials for hole extraction without added dopants.",
     "contributionLabel": "My contribution:",
-    "contribution": "Molecular design and synthesis, with experimental and theoretical analysis connecting structure, charge transport, and device performance.",
+    "contribution": "Molecular design and synthesis, initial device fabrication, and experimental and theoretical analysis linking molecular structure with charge transport and device performance.",
     "focus": "transport",
     "diagramCaption": "MAPbI₃ and mixed-cation absorbers tested. Device structure; layer thicknesses are illustrative.",
     "evidenceSummary": "Unencapsulated SS1 cells retained >91% of their initial efficiency after 1,500 h of storage (~28 °C, ~65% relative humidity).",
