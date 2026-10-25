@@ -86,7 +86,6 @@
           <div class="chemistry-copy">
             <h3 id="chemistry-step-title"></h3><p id="chemistry-step-copy"></p>
             <div class="chemistry-relevance" hidden><h4>Practical relevance</h4><p id="chemistry-relevance-copy"></p></div>
-            <div class="chemistry-contribution"><h4 id="chemistry-contribution-label"></h4><p id="chemistry-contribution"></p></div>
           </div>
         </div>
         <footer class="chemistry-footer">
@@ -123,7 +122,7 @@
     function render(announce = false) {
       const scene = scenes[topic];
       const step = scene.steps[view];
-      const contribution = window.researchTopics?.[topic];
+      const topicDetails = window.researchTopics?.[topic];
       setText("chemistry-title", scene.title);
       setText("chemistry-context", scene.context);
       setText("chemistry-collaboration", scene.collaboration);
@@ -134,11 +133,8 @@
       dialog.querySelector(".chemistry-figure figcaption").hidden = view === 2;
       setText("chemistry-scope", step.scopeNote);
       get("chemistry-scope").hidden = !step.scopeNote;
-      setText("chemistry-contribution-label", contribution?.contributionLabel?.replace(/:$/, "") || "Contribution");
-      setText("chemistry-contribution", contribution?.contribution || "");
-      dialog.querySelector(".chemistry-contribution").hidden = view === 2 || !contribution?.contribution;
-      setText("chemistry-relevance-copy", contribution?.practicalContext || "");
-      dialog.querySelector(".chemistry-relevance").hidden = view !== 2 || !contribution?.practicalContext;
+      setText("chemistry-relevance-copy", topicDetails?.practicalContext || "");
+      dialog.querySelector(".chemistry-relevance").hidden = view !== 2 || !topicDetails?.practicalContext;
       stage.replaceChildren();
       if (step.rows) {
         const table = document.createElement("table");
