@@ -5,11 +5,9 @@
   const makeExternalIcon=()=>{const ns="http://www.w3.org/2000/svg",svg=document.createElementNS(ns,"svg"),path=document.createElementNS(ns,"path");svg.setAttribute("viewBox","0 0 14 14");svg.setAttribute("class","inline-icon");svg.setAttribute("aria-hidden","true");path.setAttribute("d","M3 11 11 3M4 3h7v7");svg.append(path);return svg};
   const themeButton=$("theme-toggle");
   let savedTheme; try{savedTheme=localStorage.getItem("research-profile-theme")}catch{}
-  const mediaTheme=matchMedia("(prefers-color-scheme: dark)");
   const updateTheme=theme=>{root.dataset.theme=theme;themeButton.setAttribute("aria-label",`Use ${theme==="dark"?"light":"dark"} appearance`);document.querySelector('meta[name="theme-color"]').content=theme==="dark"?"#1b1e1c":"#fafaf8";};
-  updateTheme(savedTheme || (mediaTheme.matches?"dark":"light"));
+  updateTheme(savedTheme === "light" ? "light" : "dark");
   themeButton.addEventListener("click",()=>{savedTheme=root.dataset.theme==="dark"?"light":"dark";updateTheme(savedTheme);try{localStorage.setItem("research-profile-theme",savedTheme)}catch{} });
-  mediaTheme.addEventListener("change",e=>{if(!savedTheme)updateTheme(e.matches?"dark":"light")});
 
   let toastTimeout;
   const notify=message=>{$("feedback").textContent=message;$("feedback").hidden=false;clearTimeout(toastTimeout);toastTimeout=setTimeout(()=>$("feedback").hidden=true,3000)};
