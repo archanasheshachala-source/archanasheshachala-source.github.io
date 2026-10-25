@@ -43,7 +43,7 @@
     if (!scenes || Object.keys(scenes).length !== topicKeys.length ||
         !topicKeys.every(key => {
           const scene = scenes[key];
-          return scene && nonempty(scene.title) && nonempty(scene.context) &&
+          return scene && nonempty(scene.title) && nonempty(scene.context) && nonempty(scene.collaboration) &&
             nonempty(scene.paperHref) && validSource(scene) &&
             Array.isArray(scene.steps) && scene.steps.length === 3 &&
             scene.steps.every(step =>
@@ -106,6 +106,7 @@
           <div>
             <h2 id="chemistry-title">Chemistry, explored</h2>
             <p id="chemistry-context"></p>
+            <p id="chemistry-collaboration"></p>
           </div>
           <button id="chemistry-close" class="chemistry-icon-button" type="button" aria-label="Close chemistry exploration" autofocus>
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
@@ -201,6 +202,7 @@
       const scene = scenes[currentTopic];
       const step = scene.steps[currentStep];
       get("chemistry-context").textContent = scene.context;
+      get("chemistry-collaboration").textContent = scene.collaboration;
       get("chemistry-step-title").textContent = step.title;
       get("chemistry-step-copy").textContent = step.body;
       get("chemistry-description").textContent = step.description;

@@ -27,7 +27,8 @@ window.researchTopics = {
     "methods": "Organic synthesis · Spectroscopy · Device fabrication · DFT/TD-DFT",
     "paperHref": "#paper-star",
     "paperLabel": "Publication details",
-    "paperId": "paper-star"
+    "paperId": "paper-star",
+    "collaboration": "Collaborative work with Penn State, USA."
   },
   "pyrazine": {
     "question": "Pyrazine: an underexplored core for hole transport",
@@ -45,7 +46,8 @@ window.researchTopics = {
     "methods": "Organic synthesis · PbI₂ interaction studies · Photophysics · Theoretical modelling",
     "paperHref": "https://doi.org/10.1002/cplu.202500124",
     "paperLabel": "Read the paper",
-    "paperId": "paper-pyrazine"
+    "paperId": "paper-pyrazine",
+    "collaboration": "Collaborative work with Penn State, USA."
   },
   "pyridine": {
     "question": "Can a spiro-free molecule approach the benchmark’s performance?",
@@ -72,6 +74,7 @@ window.researchTopics = {
     "methods": "DFT · Spectroscopy · GIWAXS · Device characterisation",
     "paperHref": "https://doi.org/10.1039/D6CC01269H",
     "paperLabel": "Read the paper",
-    "paperId": "paper-pyridine"
+    "paperId": "paper-pyridine",
+    "collaboration": "Collaborative work with Toin University of Yokohama, Japan."
   }
 };

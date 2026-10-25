@@ -373,7 +373,7 @@ svg {
 
 .research-panel-heading > .chemistry-open {
   grid-column: 2;
-  grid-row: 1 / span 2;
+  grid-row: 1 / span 3;
   align-self: center;
   margin-top: 0;
 }
@@ -388,6 +388,13 @@ svg {
 #research-context {
   margin: 0;
   color: var(--secondary);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.research-collaboration {
+  margin: 6px 0 0;
+  color: var(--accent);
   font-size: 12px;
   line-height: 1.6;
 }
@@ -733,6 +740,29 @@ svg {
   letter-spacing: -.015em;
 }
 
+.full-publications {
+  margin-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.full-publications > summary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 48px;
+  padding-block: 12px;
+  color: var(--accent);
+  font-size: 13px;
+  list-style: none;
+}
+
+.full-publications > summary::-webkit-details-marker { display: none; }
+.full-publications > summary .quiet { margin-left: auto; }
+.full-publications > summary > svg { margin-left: 0; }
+.full-publications[open] > summary > svg { transform: rotate(90deg); }
+.full-publications-content { padding-top: 12px; }
+
 .paper-meta {
   display: flex;
   flex-wrap: wrap;
@@ -924,14 +954,6 @@ summary::marker {
 .expertise dd {
   margin: 0;
   color: var(--secondary);
-}
-
-.collaboration-note {
-  max-width: 65ch;
-  margin: 13px 0 0;
-  color: var(--secondary);
-  font-size: 13px;
-  line-height: 1.7;
 }
 
 /* Contact and small utility surfaces. */
@@ -1268,6 +1290,7 @@ footer a {
   .mechanism-caption { text-align: center; }
   .paper { break-inside: avoid; }
   .paper-details::details-content,
+  .full-publications::details-content,
   #research-technical::details-content,
   .expertise::details-content { content-visibility: visible; }
   .paper-body { display: block; }

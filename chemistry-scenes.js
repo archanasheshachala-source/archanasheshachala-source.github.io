@@ -58,7 +58,8 @@ window.chemistryScenes = {
           }
         ]
       }
-    ]
+    ],
+    "collaboration": "Collaborative work with Penn State, USA."
   },
   "pyrazine": {
     "title": "Interface chemistry",
@@ -121,7 +122,8 @@ window.chemistryScenes = {
           }
         ]
       }
-    ]
+    ],
+    "collaboration": "Collaborative work with Penn State, USA."
   },
   "pyridine": {
     "title": "Spiro-free design",
@@ -176,6 +178,7 @@ window.chemistryScenes = {
           }
         ]
       }
-    ]
+    ],
+    "collaboration": "Collaborative work with Toin University of Yokohama, Japan."
   }
 };

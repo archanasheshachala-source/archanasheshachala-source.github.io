@@ -77,6 +77,12 @@
   font-size: 12px;
   line-height: 1.6;
 }
+.chemistry-dialog #chemistry-collaboration {
+  margin: 6px 0 0;
+  color: var(--chem-teal);
+  font-size: 12px;
+  line-height: 1.6;
+}
 .chemistry-dialog .chemistry-icon-button {
   display: grid;
   place-items: center;

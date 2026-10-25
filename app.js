@@ -19,7 +19,7 @@
   const tabs = [...document.querySelectorAll("[data-topic]")];
   const topics = window.researchTopics;
   let currentTopic = "star";
-  const requiredFields = ["question", "context", "summary", "contributionLabel",
+  const requiredFields = ["question", "context", "collaboration", "summary", "contributionLabel",
     "contribution", "focus", "diagramCaption", "evidenceSummary",
     "comparisonLabel", "evidenceNote", "technical", "methods", "paperHref",
     "paperLabel", "paperId"];
@@ -40,6 +40,7 @@
     if (!topic) return;
     setText("research-question", topic.question);
     setText("research-context", topic.context);
+    setText("research-collaboration", topic.collaboration);
     setText("research-summary", topic.summary);
     setText("contribution-label", topic.contributionLabel);
     setText("research-contribution", topic.contribution);
@@ -135,6 +136,9 @@
   function openPublication(id, shouldScroll = true) {
     const paper = $(id);
     if (!paper?.classList.contains("paper")) return false;
+    for (let ancestor = paper.parentElement; ancestor; ancestor = ancestor.parentElement) {
+      if (ancestor.tagName === "DETAILS") ancestor.open = true;
+    }
     const details = paper.querySelector(".paper-details");
     const summary = details?.querySelector("summary");
     if (details) details.open = true;
