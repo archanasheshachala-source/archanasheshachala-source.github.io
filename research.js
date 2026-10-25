@@ -22,8 +22,8 @@ window.researchTopics = {
         "value": "17.25%"
       }
     ],
-    "evidenceNote": "In the same small-area MAPbI₃ study, dopant-free SS1 (17.73%) and SS2 (16.68%) exceeded the undoped Spiro-OMeTAD reference (15.76%).",
-    "technical": "SS1 and SS2 share a carbazole core with two thiophene-linked triphenylamine arms and an N-linked methoxy-substituted triphenylamine arm. Methoxy substitution on the two terminal arms distinguishes SS1 from SS2; the N-linked arm is not a fully conjugated extension of the backbone. In small-area MAPbI₃ cells (~0.096 cm²), SS1 reached 17.73% PCE. The separate mixed-cation/mixed-halide cell reached 19.24%, and a 1 cm² MAPbI₃ cell reached 17.25%. Unencapsulated SS1 cells retained >91% of initial PCE after 1,500 h of storage (~28 °C, ~65% RH).",
+    "evidenceNote": "In matched MAPbI₃ cells (~0.096 cm²), dopant-free SS1 (17.73%) and SS2 (16.68%) exceeded undoped Spiro-OMeTAD (15.76%).",
+    "technical": "SS1 and SS2 share a carbazole core with two thiophene-linked triphenylamine arms and an N-linked methoxy-substituted triphenylamine arm. Methoxy substitution on the two terminal arms distinguishes SS1 from SS2; the N-linked arm is not a fully conjugated extension of the backbone.",
     "methods": "Organic synthesis · Spectroscopy · Device fabrication · DFT/TD-DFT",
     "paperHref": "#paper-star",
     "paperLabel": "Publication details",
@@ -55,7 +55,7 @@ window.researchTopics = {
         "label": "Glass substrate"
       }
     ],
-    "practicalContext": "Spiro-OMeTAD commonly uses dopants and additives to improve conductivity, with associated moisture and volatility challenges. At 1 g scale, SS1’s estimated reagent cost was roughly one-sixth that of Spiro-OMeTAD. Its dopant-free formulation and 1 cm² device result support further development toward affordable, durable solar cells."
+    "practicalContext": "SS1 combines dopant-free processing with a lower lab-scale cost: its estimated reagent cost at 1 g scale was about one-sixth of Spiro-OMeTAD’s."
   },
   "pyrazine": {
     "question": "Pyrazine: an underexplored core for hole transport",
@@ -69,7 +69,7 @@ window.researchTopics = {
     "comparisonLabel": "",
     "comparisonRows": [],
     "evidenceNote": "",
-    "technical": "Dopant-free pyrazine-derived hole-transport materials were examined as charge-extracting layers and potential interfacial passivating components. Interaction studies with PbI₂, photophysical/device analysis, and theoretical modelling probed coordination at undercoordinated Pb²⁺ sites and its relationship to charge transfer and recombination.",
+    "technical": "PbI₂ interaction studies, photophysical/device analysis and modelling probed coordination at undercoordinated Pb²⁺ sites and its relationship to charge transfer and recombination.",
     "methods": "Organic synthesis · PbI₂ interaction studies · Photophysics · Theoretical modelling",
     "paperHref": "https://doi.org/10.1002/cplu.202500124",
     "paperLabel": "Read the paper",
@@ -101,11 +101,11 @@ window.researchTopics = {
         "label": "Glass substrate"
       }
     ],
-    "practicalContext": "Understanding nitrogen–lead interaction can guide future materials that combine hole extraction with surface-defect management. The next opportunity is to optimise these pyrazine-based materials for better device performance."
+    "practicalContext": "Pyrazine-based materials offer design insights for combining hole extraction with surface interaction in future perovskite devices."
   },
   "pyridine": {
     "question": "Can a spiro-free molecule approach the benchmark’s performance?",
-    "context": "Spiro-free PyCNEdTp · Co-author · Chemical Communications, 2026",
+    "context": "PyCNEdTp · Co-author · Chemical Communications, 2026",
     "summary": "In this co-authored study, we explored PyCNEdTp, a spiro-free donor–acceptor–donor material built around a dicyanopyridine core.",
     "contributionLabel": "My contribution:",
     "contribution": "Material synthesis, manuscript review and editing, as part of the collaboration.",
@@ -124,7 +124,7 @@ window.researchTopics = {
       }
     ],
     "evidenceNote": "",
-    "technical": "PyCNEdTp is a spiro-free donor–acceptor–donor material based on a π-conjugated 3,5-dicyanopyridine core. Molecular calculations, energy-level measurements, film characterisation, and n-i-p device studies connected intramolecular charge transfer and molecular electronic structure with charge extraction.",
+    "technical": "Molecular calculations, energy-level measurements, film characterisation and device studies examined the links between electronic structure and charge extraction.",
     "methods": "Study methods: DFT · Spectroscopy · GIWAXS · Device characterisation",
     "paperHref": "https://doi.org/10.1039/D6CC01269H",
     "paperLabel": "Read the paper",
@@ -160,6 +160,6 @@ window.researchTopics = {
         "label": "Glass substrate"
       }
     ],
-    "practicalContext": "The spiro-free scaffold provides another route to benchmark-level performance. It supports investigating alternatives to complex spiro-centred frameworks, with scalable synthesis and long-term device durability as further development goals."
+    "practicalContext": "PyCNEdTp matches the Spiro-OMeTAD benchmark with a spiro-free design, offering another route for future hole-transport materials."
   }
 };

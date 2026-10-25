@@ -11,7 +11,7 @@
   --selected: #e6ebe4;
   --font: "DM Sans", Arial, sans-serif;
   --gutter: 40px;
-  --section-space: 40px;
+  --section-space: 32px;
   --portrait-width: 170px;
   --portrait-height: 204px;
   color-scheme: light;
@@ -374,7 +374,7 @@ svg {
 
 .research-panel-heading {
   display: block;
-  padding-block: 22px;
+  padding-block: 16px;
 }
 
 #research-question {
@@ -416,7 +416,7 @@ svg {
 }
 
 #research-summary { margin: 0; }
-.research-evidence { margin-top: 20px; }
+.research-evidence { margin-top: 14px; }
 
 .research-contribution {
   margin-block: 12px;
@@ -1069,7 +1069,7 @@ footer a {
 @media (max-width: 480px) {
   :root {
     --gutter: 23px;
-    --section-space: 30px;
+    --section-space: 26px;
     --portrait-width: 96px;
     --portrait-height: 115px;
   }

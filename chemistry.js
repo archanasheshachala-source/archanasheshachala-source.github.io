@@ -130,6 +130,8 @@
       setText("chemistry-step-title", step.title);
       setText("chemistry-step-copy", step.body);
       setText("chemistry-description", step.description);
+      get("chemistry-description").hidden = view === 1;
+      dialog.querySelector(".chemistry-figure figcaption").hidden = view === 2;
       setText("chemistry-scope", step.scopeNote);
       get("chemistry-scope").hidden = !step.scopeNote;
       setText("chemistry-contribution-label", contribution?.contributionLabel?.replace(/:$/, "") || "Contribution");
