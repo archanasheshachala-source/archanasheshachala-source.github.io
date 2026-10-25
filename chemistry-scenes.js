@@ -2,7 +2,7 @@
 
 window.chemistryScenes = {
   "star": {
-    "title": "Dopant-free transport",
+    "title": "Dopant-free performance",
     "context": "Carbazole–triphenylamine hybrids · First author · Carbon Energy, accepted",
     "paperHref": "#paper-star",
     "paperId": "paper-star",

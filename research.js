@@ -2,7 +2,7 @@
 
 window.researchTopics = {
   "star": {
-    "question": "19.24% efficiency with dopant-free hole transport",
+    "question": "19.24% efficiency with a dopant-free hole-transport material",
     "context": "Carbazole–triphenylamine hybrids · First author · Carbon Energy, accepted",
     "summary": "I designed star-shaped carbazole–triphenylamine materials for hole extraction without added dopants.",
     "contributionLabel": "My contribution:",
