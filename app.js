@@ -173,10 +173,10 @@
     if (!button) return;
     button.addEventListener("click", () => {
       const authors = paper.querySelector(".authors")?.textContent.trim() || "";
-      const title = paper.querySelector("h3")?.textContent.trim() || "";
+      const title = paper.querySelector("h3, h4")?.textContent.trim() || "";
       const journal = paper.querySelector(".paper-meta > span")?.textContent.trim() || "";
       const doi = paper.querySelector('a[href^="https://doi.org/"]')?.href || "";
-      const status = paper.dataset.status === "accepted" ? " (accepted)" : "";
+      const status = ({ accepted: " (accepted)", submitted: " (submitted)", "in-preparation": " (in preparation)" })[paper.dataset.status] || "";
       copy(`${authors} ${title}. ${journal}${status}.${doi ? " " + doi : ""}`, "Citation copied");
     });
     button.hidden = false;
