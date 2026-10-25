@@ -23,7 +23,6 @@ window.researchTopics = {
       }
     ],
     "evidenceNote": "In matched MAPbI₃ cells (~0.096 cm²), dopant-free SS1 (17.73%) and SS2 (16.68%) exceeded undoped Spiro-OMeTAD (15.76%).",
-    "technical": "SS1 and SS2 share a carbazole core with two thiophene-linked triphenylamine arms and an N-linked methoxy-substituted triphenylamine arm. Methoxy substitution on the two terminal arms distinguishes SS1 from SS2; the N-linked arm is not a fully conjugated extension of the backbone.",
     "methods": "Organic synthesis · Spectroscopy · Device fabrication · DFT/TD-DFT",
     "paperHref": "#paper-star",
     "paperLabel": "Publication details",
@@ -69,7 +68,6 @@ window.researchTopics = {
     "comparisonLabel": "",
     "comparisonRows": [],
     "evidenceNote": "",
-    "technical": "PbI₂ interaction studies, photophysical/device analysis and modelling probed coordination at undercoordinated Pb²⁺ sites and its relationship to charge transfer and recombination.",
     "methods": "Organic synthesis · PbI₂ interaction studies · Photophysics · Theoretical modelling",
     "paperHref": "https://doi.org/10.1002/cplu.202500124",
     "paperLabel": "Read the paper",
@@ -124,7 +122,6 @@ window.researchTopics = {
       }
     ],
     "evidenceNote": "",
-    "technical": "Molecular calculations, energy-level measurements, film characterisation and device studies examined the links between electronic structure and charge extraction.",
     "methods": "Study methods: DFT · Spectroscopy · GIWAXS · Device characterisation",
     "paperHref": "https://doi.org/10.1039/D6CC01269H",
     "paperLabel": "Read the paper",

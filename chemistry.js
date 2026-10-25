@@ -4,7 +4,7 @@
   const opener = document.getElementById("chemistry-open");
   const keys = ["star", "pyrazine", "pyridine"];
   const scenes = window.chemistryScenes;
-  const viewNames = ["Molecular design", "Device structure", "Results"];
+  const viewNames = ["Molecular design", "Device structure"];
   if (!opener || document.getElementById("chemistry-dialog") ||
       typeof HTMLDialogElement === "undefined" || !HTMLDialogElement.prototype.showModal) return;
   opener.hidden = true;
@@ -27,19 +27,17 @@
     };
     if (!scenes || !keys.every(key => {
       const s = scenes[key];
-      return s && [s.title, s.context, s.collaboration].every(text) && validSource(s) &&
-        s.steps?.length === 3 && s.steps.every(step =>
+      return s && [s.title, s.context].every(text) && validSource(s) &&
+        s.steps?.length === viewNames.length && s.steps.every(step =>
           [step.title, step.body, step.description].every(text) &&
           typeof step.scopeNote === "string" &&
-          (text(step.svg) || (step.columns?.length === 2 && step.columns.every(text) &&
-            step.rows?.length && step.rows.every(row => row.length === 2 && row.every(text)))));
+          text(step.svg));
     })) return;
 
     const parser = new DOMParser();
     const prepared = new Map();
     keys.forEach(key => {
       prepared.set(key, scenes[key].steps.map((step, index) => {
-        if (!step.svg) return null;
         const doc = parser.parseFromString(step.svg, "image/svg+xml");
         const svg = doc.documentElement;
         if (doc.querySelector("parsererror") || svg.localName !== "svg" ||
@@ -72,7 +70,7 @@
     dialog.innerHTML = `
       <div class="chemistry-shell">
         <header class="chemistry-header">
-          <div><h2 id="chemistry-title"></h2><p id="chemistry-context"></p><p id="chemistry-collaboration"></p></div>
+          <div><h2 id="chemistry-title"></h2><p id="chemistry-context"></p></div>
           <button id="chemistry-close" class="chemistry-icon-button" type="button" aria-label="Close study" autofocus>
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
           </button>
@@ -85,7 +83,6 @@
           </figure>
           <div class="chemistry-copy">
             <h3 id="chemistry-step-title"></h3><p id="chemistry-step-copy"></p>
-            <div class="chemistry-relevance" hidden><h4>Practical relevance</h4><p id="chemistry-relevance-copy"></p></div>
           </div>
         </div>
         <footer class="chemistry-footer">
@@ -122,42 +119,16 @@
     function render(announce = false) {
       const scene = scenes[topic];
       const step = scene.steps[view];
-      const topicDetails = window.researchTopics?.[topic];
       setText("chemistry-title", scene.title);
       setText("chemistry-context", scene.context);
-      setText("chemistry-collaboration", scene.collaboration);
       setText("chemistry-step-title", step.title);
       setText("chemistry-step-copy", step.body);
       setText("chemistry-description", step.description);
       get("chemistry-description").hidden = view === 1;
-      dialog.querySelector(".chemistry-figure figcaption").hidden = view === 2;
       setText("chemistry-scope", step.scopeNote);
       get("chemistry-scope").hidden = !step.scopeNote;
-      setText("chemistry-relevance-copy", topicDetails?.practicalContext || "");
-      dialog.querySelector(".chemistry-relevance").hidden = view !== 2 || !topicDetails?.practicalContext;
       stage.replaceChildren();
-      if (step.rows) {
-        const table = document.createElement("table");
-        table.className = "chemistry-results";
-        const caption = table.createCaption();
-        caption.textContent = step.title;
-        caption.className = "sr-only";
-        const head = table.createTHead().insertRow();
-        step.columns.forEach(label => {
-          const th = document.createElement("th"); th.scope = "col"; th.textContent = label; head.append(th);
-        });
-        const body = table.createTBody();
-        step.rows.forEach(([label, value]) => {
-          const row = body.insertRow();
-          const th = document.createElement("th"); th.scope = "row"; th.textContent = label; row.append(th);
-          row.insertCell().textContent = value;
-        });
-        stage.append(table);
-        if (step.resultNote) {
-          const note = document.createElement("p"); note.className = "chemistry-result-note";
-          note.textContent = step.resultNote; stage.append(note);
-        }
-      } else stage.append(prepared.get(topic)[view].cloneNode(true));
+      stage.append(prepared.get(topic)[view].cloneNode(true));
       select.value = topic;
       tabs.forEach((button, index) => {
         const selected = index === view;
@@ -177,10 +148,10 @@
       button.addEventListener("click", () => { view = index; render(true); });
       button.addEventListener("keydown", event => {
         let next;
-        if (event.key === "ArrowRight") next = (view + 1) % 3;
-        else if (event.key === "ArrowLeft") next = (view + 2) % 3;
+        if (event.key === "ArrowRight") next = (view + 1) % tabs.length;
+        else if (event.key === "ArrowLeft") next = (view + tabs.length - 1) % tabs.length;
         else if (event.key === "Home") next = 0;
-        else if (event.key === "End") next = 2;
+        else if (event.key === "End") next = tabs.length - 1;
         else return;
         event.preventDefault(); view = next; render(true); tabs[next].focus({ preventScroll: true });
       });

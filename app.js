@@ -19,7 +19,7 @@
   let currentTopic = "star";
   const requiredFields = ["question", "context", "collaboration", "summary", "contributionLabel",
     "contribution", "focus", "diagramCaption", "evidenceSummary",
-    "comparisonLabel", "evidenceNote", "technical", "methods", "paperHref",
+    "comparisonLabel", "evidenceNote", "methods", "paperHref",
     "paperLabel", "paperId"];
   const validTopics = topics && tabs.every(tab => {
     const topic = topics[tab.dataset.topic];
@@ -49,7 +49,6 @@
     setText("research-comparison-label", topic.comparisonLabel);
     setText("research-comparison-column", topic.comparisonColumn || "Material");
     setText("research-evidence-note", topic.evidenceNote);
-    setText("research-technical-copy", topic.technical);
     setText("research-methods", topic.methods);
     setText("research-relevance-copy", topic.practicalContext || "");
     if ($("research-relevance")) $("research-relevance").hidden = !topic.practicalContext;

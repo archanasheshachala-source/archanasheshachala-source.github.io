@@ -21,7 +21,6 @@
 .chemistry-header > div { min-width: 0; }
 #chemistry-title { margin: 0 0 4px; font-size: 22px; line-height: 1.25; font-weight: 500; letter-spacing: -.025em; }
 #chemistry-context { margin: 0; color: var(--secondary); font-size: 12px; line-height: 1.6; }
-#chemistry-collaboration { margin: 3px 0 0; color: var(--accent); font-size: 12px; line-height: 1.6; }
 .chemistry-icon-button { display: grid; place-items: center; flex-shrink: 0; width: 36px; height: 36px; padding: 9px; border: 0; background: transparent; color: var(--secondary); border-radius: 3px; }
 .chemistry-icon-button svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.5; }
 .chemistry-icon-button:hover { color: var(--ink); background: var(--wash); }
@@ -42,20 +41,10 @@
 .chemistry-copy { min-width: 0; padding-top: 8px; }
 #chemistry-step-title { margin: 0 0 8px; font-size: 18px; line-height: 1.4; font-weight: 500; letter-spacing: -.02em; }
 #chemistry-step-copy { margin: 0; color: var(--secondary); font-size: 14px; line-height: 1.8; }
-.chemistry-relevance { margin-top: 14px; }
-.chemistry-relevance h4 { margin: 0 0 8px; font-size: 12px; font-weight: 500; }
-#chemistry-relevance-copy { margin: 0; color: var(--secondary); font-size: 13px; line-height: 1.8; }
 .chemistry-footer { display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; gap: 8px 20px; padding: 5px 20px; border-top: 1px solid var(--line); background: var(--bg); }
 .chemistry-study-label { display: flex; align-items: center; min-width: 0; gap: 9px; color: var(--secondary); font-size: 12px; }
 #chemistry-study { min-height: 40px; max-width: 240px; padding: 7px 24px 7px 8px; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; background-color: var(--bg); color: var(--ink); font: inherit; font-size: 12px; }
 #chemistry-source { display: inline-flex; align-items: center; min-height: 40px; white-space: nowrap; color: var(--accent); font-size: 12px; text-underline-offset: 4px; }
-.chemistry-results { width: 100%; margin: 8px 0 0; border-collapse: collapse; font-size: 13px; line-height: 1.65; text-align: left; }
-.chemistry-results thead th { padding: 0 0 11px; border-bottom: 1px solid var(--line); color: var(--secondary); font-size: 11px; font-weight: 400; }
-.chemistry-results tbody th, .chemistry-results td { padding: 12px 0; border-bottom: 1px solid var(--line); vertical-align: baseline; }
-.chemistry-results tbody th { padding-right: 18px; color: var(--secondary); font-weight: 400; }
-.chemistry-results td { font-size: 15px; font-weight: 500; font-variant-numeric: tabular-nums; }
-.chemistry-results th:last-child, .chemistry-results td:last-child { text-align: right; }
-.chemistry-result-note { margin: 12px 0 0; color: var(--secondary); font-size: 11px; line-height: 1.75; }
 .chemistry-dialog :is(button, a, select, [tabindex]):focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 .chemistry-workspace:focus-visible { outline-offset: -4px; }
 /* Source-backed layer geometry shares the page palette; colour identifies the HTL. */
@@ -74,9 +63,8 @@
   .chemistry-shell { height: auto; max-height: calc(100dvh - 18px); }
   .chemistry-header { gap: 12px; padding: 12px 15px 8px; }
   #chemistry-title { font-size: 21px; }
-  #chemistry-context, #chemistry-collaboration { font-size: 11px; }
-  .chemistry-views { justify-content: space-between; gap: 14px; padding-inline: 15px; }
-  .chemistry-views button { max-width: 34%; font-size: 12px; }
+  .chemistry-views { justify-content: flex-start; gap: 14px; padding-inline: 15px; }
+  .chemistry-views button { max-width: 50%; font-size: 12px; }
   .chemistry-workspace { display: block; flex: 0 1 auto; padding: 12px 15px 14px; }
   .chemistry-stage > svg { max-height: 280px; }
   .chemistry-stage > .chemistry-molecule { max-height: 200px; }
