@@ -572,24 +572,8 @@ svg {
   background: transparent;
 }
 
-.device-interface {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 19px;
-  padding-inline: 4px;
-  border-block: 1px dashed var(--line);
-  color: var(--secondary);
-  font-size: 10.5px;
-  line-height: 1.4;
-  text-align: center;
-}
-
-#device-diagram[data-focus="interface"] .device-interface {
-  border-color: var(--accent);
-  background: var(--selected);
-  color: var(--accent);
-}
+.device-layer--ito { min-height: 28px; }
+.device-layer--passivation { min-height: 24px; padding-block: 4px; font-size: 10.5px; }
 
 #device-diagram[data-focus="interface"] .device-layer--htm,
 #device-diagram[data-focus="transport"] .device-layer--htm,

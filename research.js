@@ -8,7 +8,7 @@ window.researchTopics = {
     "contributionLabel": "My contribution:",
     "contribution": "Molecular design and synthesis, with experimental and theoretical analysis connecting structure, charge transport, and device performance.",
     "focus": "transport",
-    "diagramCaption": "Organic hole-transport layer highlighted. Schematic, not to scale.",
+    "diagramCaption": "MAPbI₃ and mixed-cation absorbers tested. Schematic, not to scale.",
     "evidenceSummary": "Unencapsulated SS1 cells retained >91% of their initial efficiency after 1,500 h of storage (~28 °C, ~65% relative humidity).",
     "comparisonLabel": "SS1 power conversion efficiency",
     "comparisonColumn": "Device configuration",
@@ -28,7 +28,33 @@ window.researchTopics = {
     "paperHref": "#paper-star",
     "paperLabel": "Publication details",
     "paperId": "paper-star",
-    "collaboration": "Collaborative work with Penn State, USA."
+    "collaboration": "Collaborative work with Penn State, USA.",
+    "diagramLayers": [
+      {
+        "kind": "electrode",
+        "label": "Au · top electrode"
+      },
+      {
+        "kind": "htm",
+        "label": "SS1 / SS2 · dopant-free HTL"
+      },
+      {
+        "kind": "absorber",
+        "label": "Perovskite absorber"
+      },
+      {
+        "kind": "etl",
+        "label": "SnO₂ · electron transport"
+      },
+      {
+        "kind": "ito",
+        "label": "ITO · transparent electrode"
+      },
+      {
+        "kind": "glass",
+        "label": "Glass substrate"
+      }
+    ]
   },
   "pyrazine": {
     "question": "Pyrazine: an underexplored core for hole transport",
@@ -37,7 +63,7 @@ window.researchTopics = {
     "contributionLabel": "My contribution:",
     "contribution": "Design and synthesis of pyrazine-derived materials, with experimental and theoretical analysis of their interfacial behaviour.",
     "focus": "interface",
-    "diagramCaption": "Perovskite/organic interface highlighted. Schematic, not to scale.",
+    "diagramCaption": "PS1 / PS2 directly contact MAPbI₃. Schematic, not to scale.",
     "evidenceSummary": "Interaction experiments, spectroscopy, and modelling supported nitrogen–lead interaction and a role in charge transfer. The devices showed moderate efficiency.",
     "comparisonLabel": "",
     "comparisonRows": [],
@@ -47,7 +73,33 @@ window.researchTopics = {
     "paperHref": "https://doi.org/10.1002/cplu.202500124",
     "paperLabel": "Read the paper",
     "paperId": "paper-pyrazine",
-    "collaboration": "Collaborative work with Penn State, USA."
+    "collaboration": "Collaborative work with Penn State, USA.",
+    "diagramLayers": [
+      {
+        "kind": "electrode",
+        "label": "Au · top electrode"
+      },
+      {
+        "kind": "htm",
+        "label": "PS1 / PS2 · dopant-free HTL"
+      },
+      {
+        "kind": "absorber",
+        "label": "MAPbI₃ · absorber"
+      },
+      {
+        "kind": "etl",
+        "label": "SnO₂ · electron transport"
+      },
+      {
+        "kind": "ito",
+        "label": "ITO · transparent electrode"
+      },
+      {
+        "kind": "glass",
+        "label": "Glass substrate"
+      }
+    ]
   },
   "pyridine": {
     "question": "Can a spiro-free molecule approach the benchmark’s performance?",
@@ -56,7 +108,7 @@ window.researchTopics = {
     "contributionLabel": "Collaborative work:",
     "contribution": "A joint experimental and theoretical investigation of a spiro-free hole-transport material.",
     "focus": "architecture",
-    "diagramCaption": "Spiro-free hole-transport layer highlighted. Schematic, not to scale.",
+    "diagramCaption": "PEAI-treated surface beneath PyCNEdTp. Schematic, not to scale.",
     "evidenceSummary": "",
     "comparisonLabel": "Power conversion efficiency · n-i-p solar cells",
     "comparisonRows": [
@@ -75,6 +127,36 @@ window.researchTopics = {
     "paperHref": "https://doi.org/10.1039/D6CC01269H",
     "paperLabel": "Read the paper",
     "paperId": "paper-pyridine",
-    "collaboration": "Collaborative work with Toin University of Yokohama, Japan."
+    "collaboration": "Collaborative work with Toin University of Yokohama, Japan.",
+    "diagramLayers": [
+      {
+        "kind": "electrode",
+        "label": "Au · top electrode"
+      },
+      {
+        "kind": "htm",
+        "label": "PyCNEdTp · hole transport"
+      },
+      {
+        "kind": "passivation",
+        "label": "PEAI · surface treatment"
+      },
+      {
+        "kind": "absorber",
+        "label": "CsFAMAPb(I,Br)₃ · absorber"
+      },
+      {
+        "kind": "etl",
+        "label": "SnO₂ · electron transport"
+      },
+      {
+        "kind": "ito",
+        "label": "ITO · transparent electrode"
+      },
+      {
+        "kind": "glass",
+        "label": "Glass substrate"
+      }
+    ]
   }
 };

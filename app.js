@@ -26,6 +26,8 @@
   const validTopics = topics && tabs.every(tab => {
     const topic = topics[tab.dataset.topic];
     return topic && requiredFields.every(field => typeof topic[field] === "string") &&
+      Array.isArray(topic.diagramLayers) && topic.diagramLayers.length >= 6 &&
+      topic.diagramLayers.every(layer => typeof layer.label === "string" && /^[a-z]+$/.test(layer.kind)) &&
       Array.isArray(topic.comparisonRows) &&
       topic.comparisonRows.every(row => typeof row.label === "string" && typeof row.value === "string");
   });
@@ -53,7 +55,21 @@
     setText("research-methods", topic.methods);
 
     const diagram = $("device-diagram");
-    if (diagram) diagram.dataset.focus = topic.focus;
+    if (diagram) {
+      diagram.dataset.focus = topic.focus;
+      const stack = diagram.querySelector(".device-stack");
+      if (stack) {
+        stack.replaceChildren(...topic.diagramLayers.map(layer => {
+          const row = document.createElement("div");
+          row.className = `device-layer device-layer--${layer.kind}`;
+          const label = document.createElement("span");
+          label.className = "device-layer-label";
+          label.textContent = layer.label;
+          row.append(label);
+          return row;
+        }));
+      }
+    }
     const evidenceSummary = $("research-evidence-summary");
     if (evidenceSummary) evidenceSummary.hidden = !topic.evidenceSummary;
     const note = $("research-evidence-note");
