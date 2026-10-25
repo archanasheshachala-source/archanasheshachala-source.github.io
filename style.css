@@ -509,6 +509,10 @@ svg {
   line-height: 1.7;
 }
 
+.research-relevance { margin-block: 14px; color: var(--secondary); font-size: 13px; line-height: 1.75; }
+.research-relevance strong { color: var(--ink); font-weight: 500; }
+.research-relevance a { display: inline-block; margin-left: 4px; font-size: 12px; }
+
 .research-bottom,
 .research-actions {
   display: flex;

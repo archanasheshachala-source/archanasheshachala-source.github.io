@@ -85,6 +85,7 @@
           </figure>
           <div class="chemistry-copy">
             <h3 id="chemistry-step-title"></h3><p id="chemistry-step-copy"></p>
+            <div class="chemistry-relevance" hidden><h4>Practical relevance</h4><p id="chemistry-relevance-copy"></p><a id="chemistry-background" target="_blank" rel="noopener noreferrer">Background literature</a></div>
             <div class="chemistry-contribution"><h4 id="chemistry-contribution-label"></h4><p id="chemistry-contribution"></p></div>
           </div>
         </div>
@@ -133,7 +134,11 @@
       get("chemistry-scope").hidden = !step.scopeNote;
       setText("chemistry-contribution-label", contribution?.contributionLabel?.replace(/:$/, "") || "Contribution");
       setText("chemistry-contribution", contribution?.contribution || "");
-      dialog.querySelector(".chemistry-contribution").hidden = !contribution?.contribution;
+      dialog.querySelector(".chemistry-contribution").hidden = view === 2 || !contribution?.contribution;
+      setText("chemistry-relevance-copy", contribution?.practicalContext || "");
+      dialog.querySelector(".chemistry-relevance").hidden = view !== 2 || !contribution?.practicalContext;
+      get("chemistry-background").href = contribution?.backgroundHref || scene.paperHref;
+      get("chemistry-background").hidden = !contribution?.backgroundHref;
       stage.replaceChildren();
       if (step.rows) {
         const table = document.createElement("table");

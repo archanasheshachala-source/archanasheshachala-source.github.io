@@ -23,7 +23,7 @@ window.chemistryScenes = {
       },
       {
         "title": "Efficiency, area and storage",
-        "body": "SS1 was evaluated with different perovskite absorbers, at a larger active area and during unencapsulated storage.",
+        "body": "In the same small-area MAPbI₃ study (~0.096 cm²), dopant-free SS1 and SS2 reached 17.73% and 16.68% PCE, exceeding the undoped Spiro-OMeTAD reference at 15.76%.",
         "description": "Reported SS1 results under the labelled conditions.",
         "scopeNote": "",
         "columns": [
@@ -119,7 +119,7 @@ window.chemistryScenes = {
       },
       {
         "title": "A same-study comparison",
-        "body": "The two hole-transport materials showed similar efficiencies in the same device study.",
+        "body": "PyCNEdTp showed a slightly higher reported PCE than Spiro-OMeTAD in the same study (22.8% versus 22.6%); both gave comparable performance.",
         "description": "Power conversion efficiency in the reported n-i-p solar cells.",
         "scopeNote": "",
         "columns": [
