@@ -29,7 +29,7 @@ GitHub's current instructions: https://docs.github.com/en/pages/quickstart
 
 The Carbon Energy article has no verified DOI in the supplied material and is labelled **Accepted** with “link to follow.” The Materials Advances article retains the **Accepted** status from the supplied record and links to its DOI. Chemical Communications publication was verified against the locally supplied published article. Keep these statuses current as publisher records change.
 
-The displayed efficiency results describe the relevant individual studies and should retain their device/test context. Research summaries exclude unpublished manuscript and patent details. The full publication list includes manuscript titles/authors/status explicitly requested by the user; no unpublished full texts are distributed. The attached CV is an unchanged copy of the user's selected `After defence/India/Archana S CV_I.pdf`, including the contact information in that original file. Its preview pages are rendered directly from the same PDF.
+The displayed efficiency results describe the relevant individual studies and should retain their device/test context. Research summaries exclude unpublished manuscript and patent details. The full publication list includes manuscript titles/authors/status explicitly requested by the user; no unpublished full texts are distributed. The attached CV is the user's selected CV with the phone entry removed and alignment improved at their request on 26 October 2026. It retains the original two-page style, fonts, portrait and other text. Its preview pages are rendered directly from the current public PDF.
 
 ## Local preview and packaging
 
@@ -40,7 +40,7 @@ The publishing archive contains the contents of `dist/`. Source context, researc
 ## Interaction and accessibility
 
 - The portrait is a plain, noninteractive image without a frame, background panel, caption, or effect control. The compact utility row contains only location and theme.
-- On desktop, “View CV” opens the original page preview. On phones, a compact sheet prioritizes Open original PDF for full-size reading and offers optional Preview pages here and download actions. Images load only when previewed. Escape or Close returns focus; without JavaScript, the link opens the original PDF directly.
+- “View CV” opens the same two-page preview on desktop and phones, with a compact download/close toolbar. Select a page to enlarge it. Images load only when previewed. Escape or Close returns focus; without JavaScript, the link opens the current PDF directly.
 - Research order is Dopant-free transport, Interface chemistry, then Spiro-free design; dopant-free transport is the HTML and JavaScript default. Use the study tabs or Left/Right/Home/End keys. The schematic emphasis, contribution, and evidence change together. Desktop pairs a compact schematic with one aligned reading column. Mobile keeps the short summary and results together before the schematic. Contribution & methods reveals the detailed role and technical depth; chemistry exploration sits with the paper actions.
 - Study-specific collaboration credits identify Penn State for dopant-free transport/interface chemistry and Toin University of Yokohama for spiro-free design, without changing individual contribution statements.
 - The diagram is a simplified, labelled n-i-p architecture. Its emphasis identifies the studied organic layer or interface. Detailed molecular illustrations are available in the optional chemistry exploration.

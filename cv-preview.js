@@ -6,9 +6,9 @@
       typeof HTMLDialogElement === "undefined" ||
       typeof HTMLDialogElement.prototype.showModal !== "function") return;
 
-  const pdfUrl = new URL("assets/Archana-Sheshachala-CV.pdf?v=de7d7bfb16", document.baseURI);
+  const pdfUrl = new URL("assets/Archana-Sheshachala-CV.pdf?v=441489f6ae", document.baseURI);
   const pageUrls = [1, 2].map(page =>
-    new URL(`assets/cv-page-${page}.png?v=de7d7bfb16`, document.baseURI));
+    new URL(`assets/cv-page-${page}.png?v=441489f6ae`, document.baseURI));
   if ([pdfUrl, ...pageUrls].some(url => url.origin !== location.origin)) return;
   let dialog;
   let lastOpener = null;
@@ -31,7 +31,7 @@
       <div class="cv-preview-shell">
         <header class="cv-preview-header">
           <h2 id="cv-preview-title" class="sr-only">Archana Sheshachala — CV</h2>
-          <a id="cv-preview-download" class="cv-preview-icon" download="Archana-Sheshachala-CV.pdf" aria-label="Download original CV PDF" title="Download original CV PDF">
+          <a id="cv-preview-download" class="cv-preview-icon" download="Archana-Sheshachala-CV.pdf" aria-label="Download CV PDF" title="Download CV PDF">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg>
           </a>
           <button id="cv-preview-close" class="cv-preview-icon" type="button" aria-label="Close CV preview" title="Close CV preview" autofocus>
@@ -52,7 +52,7 @@
       const failed = pageStates.flatMap((state, index) => state === "error" ? [index + 1] : []);
       const status = get("cv-preview-status");
       status.textContent = failed.length ?
-        `${failed.length === 2 ? "The preview" : `Page ${failed[0]}`} could not load. Use the download icon for the complete original CV.` :
+        `${failed.length === 2 ? "The preview" : `Page ${failed[0]}`} could not load. Use the download icon for the complete CV.` :
         pageStates.some(state => state !== "loaded") ? "Loading CV preview…" : "";
       status.hidden = !status.textContent;
     }
@@ -149,7 +149,7 @@
         restoreScroll();
         if (dialog.open) dialog.close();
         lastOpener = null;
-        // The original anchor opens the unaltered PDF if previewing fails.
+        // The original anchor opens the current CV PDF if previewing fails.
       }
     });
     triggers.forEach(trigger => {
