@@ -8,7 +8,7 @@
 
   const pdfUrl = new URL("assets/Archana-Sheshachala-CV.pdf?v=441489f6ae", document.baseURI);
   const pageUrls = [1, 2].map(page =>
-    new URL(`assets/cv-page-${page}.png?v=441489f6ae`, document.baseURI));
+    new URL(`assets/cv-page-${page}.png?v=957a885da7`, document.baseURI));
   if ([pdfUrl, ...pageUrls].some(url => url.origin !== location.origin)) return;
   let dialog;
   let lastOpener = null;
@@ -65,8 +65,8 @@
       button.setAttribute("title", "Click or tap to enlarge");
       button.setAttribute("aria-pressed", "false");
       const image = document.createElement("img");
-      image.width = 1034;
-      image.height = 1463;
+      image.width = 2482;
+      image.height = 3510;
       image.decoding = "async";
       image.alt = `Archana Sheshachala's curriculum vitae, page ${index + 1} of 2`;
       image.addEventListener("load", () => {
