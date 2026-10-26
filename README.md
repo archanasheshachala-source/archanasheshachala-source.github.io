@@ -29,7 +29,7 @@ GitHub's current instructions: https://docs.github.com/en/pages/quickstart
 
 The Carbon Energy article has no verified DOI in the supplied material and is labelled **Accepted** with “link to follow.” The Materials Advances article retains the **Accepted** status from the supplied record and links to its DOI. Chemical Communications publication was verified against the locally supplied published article. Keep these statuses current as publisher records change.
 
-The displayed efficiency results describe the relevant individual studies and should retain their device/test context. Research summaries exclude unpublished manuscript and patent details. The full publication list includes manuscript titles/authors/status explicitly requested by the user; no unpublished full texts are distributed. The attached CV is the user's selected CV with the phone entry removed and alignment improved at their request on 26 October 2026. It retains the original two-page style, fonts, portrait and other text. Its preview pages are rendered directly from the current public PDF.
+The displayed efficiency results describe the relevant individual studies and should retain their device/test context. Research summaries exclude unpublished manuscript and patent details. The full publication list includes manuscript titles/authors/status explicitly requested by the user; no unpublished full texts are distributed. The attached CV is the user's selected CV with the phone entry removed, alignment improved and computational expertise updated at their request on 26 October 2026. It retains the original two-page style, fonts, portrait and remaining text. Its 300-dpi preview pages are rendered directly from the current public PDF.
 
 ## Local preview and packaging
 
