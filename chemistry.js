@@ -31,6 +31,9 @@
         s.steps?.length === viewNames.length && s.steps.every(step =>
           [step.title, step.body, step.description].every(text) &&
           typeof step.scopeNote === "string" &&
+          Array.isArray(step.characterisation) && step.characterisation.length > 0 &&
+          step.characterisation.every(group => text(group.label) &&
+            Array.isArray(group.methods) && group.methods.length > 0 && group.methods.every(text)) &&
           text(step.svg));
     })) return;
 
@@ -83,6 +86,10 @@
           </figure>
           <div class="chemistry-copy">
             <h3 id="chemistry-step-title"></h3><p id="chemistry-step-copy"></p>
+            <section class="chemistry-methods" aria-labelledby="chemistry-methods-title">
+              <h4 id="chemistry-methods-title">Characterisation</h4>
+              <dl id="chemistry-methods-list"></dl>
+            </section>
           </div>
         </div>
         <footer class="chemistry-footer">
@@ -123,6 +130,17 @@
       setText("chemistry-context", scene.context);
       setText("chemistry-step-title", step.title);
       setText("chemistry-step-copy", step.body);
+      const methods = get("chemistry-methods-list");
+      methods.replaceChildren();
+      step.characterisation.forEach(group => {
+        const row = document.createElement("div");
+        const label = document.createElement("dt");
+        const list = document.createElement("dd");
+        label.textContent = group.label;
+        list.textContent = group.methods.join(" · ");
+        row.append(label, list);
+        methods.append(row);
+      });
       setText("chemistry-description", step.description);
       get("chemistry-description").hidden = view === 1;
       setText("chemistry-scope", step.scopeNote);

@@ -28,7 +28,7 @@
 .chemistry-views button { min-height: 40px; margin-bottom: -1px; padding: 7px 0 9px; border: 0; border-bottom: 2px solid transparent; background: transparent; color: var(--secondary); font-size: 13px; line-height: 1.5; }
 .chemistry-views button[aria-selected="true"] { border-bottom-color: var(--accent); color: var(--ink); }
 .chemistry-views button:hover { color: var(--accent); }
-.chemistry-workspace { display: grid; flex: 0 1 auto; grid-template-columns: minmax(0, 1.35fr) minmax(240px, .9fr); gap: 28px; min-height: 0; overflow-y: auto; overscroll-behavior: contain; padding: 14px 20px 16px; align-items: start; }
+.chemistry-workspace { display: grid; flex: 0 1 auto; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 28px; min-height: 0; overflow-y: auto; overscroll-behavior: contain; padding: 14px 20px 16px; align-items: start; }
 .chemistry-figure { min-width: 0; margin: 0; }
 .chemistry-stage { width: 100%; min-width: 0; }
 .chemistry-stage > svg { display: block; width: 100%; height: auto; max-height: 280px; }
@@ -41,6 +41,13 @@
 .chemistry-copy { min-width: 0; padding-top: 8px; }
 #chemistry-step-title { margin: 0 0 8px; font-size: 18px; line-height: 1.4; font-weight: 500; letter-spacing: -.02em; }
 #chemistry-step-copy { margin: 0; color: var(--secondary); font-size: 14px; line-height: 1.8; }
+.chemistry-methods { margin-top: 20px; padding-top: 14px; border-top: 1px solid var(--line); }
+#chemistry-methods-title { margin: 0 0 10px; font-size: 14px; line-height: 1.5; font-weight: 500; }
+#chemistry-methods-list { margin: 0; }
+#chemistry-methods-list > div { display: grid; grid-template-columns: 112px minmax(0, 1fr); gap: 12px; padding-block: 7px; }
+#chemistry-methods-list > div + div { border-top: 1px solid var(--line); }
+#chemistry-methods-list dt { color: var(--secondary); font-size: 12px; line-height: 1.7; }
+#chemistry-methods-list dd { margin: 0; color: var(--ink); font-size: 13px; line-height: 1.65; overflow-wrap: anywhere; }
 .chemistry-footer { display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; gap: 8px 20px; padding: 5px 20px; border-top: 1px solid var(--line); background: var(--bg); }
 .chemistry-study-label { display: flex; align-items: center; min-width: 0; gap: 9px; color: var(--secondary); font-size: 12px; }
 #chemistry-study { min-height: 40px; max-width: 240px; padding: 7px 24px 7px 8px; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; background-color: var(--bg); color: var(--ink); font: inherit; font-size: 12px; }
@@ -72,11 +79,13 @@
   .chemistry-stage > [data-core="pyridine"] { max-height: 170px; }
   .chemistry-copy { margin-top: 16px; padding-top: 0; }
   #chemistry-step-title { font-size: 18px; }
+  #chemistry-methods-list > div { grid-template-columns: 105px minmax(0, 1fr); gap: 12px; }
   .chemistry-footer { flex-wrap: wrap; gap: 5px 10px; padding: 4px 15px; }
   .chemistry-study-label { flex: 1; }
   #chemistry-study { min-width: 0; width: 100%; max-width: 170px; }
 }
 @media (max-width: 360px) {
+  #chemistry-methods-list > div { grid-template-columns: 90px minmax(0, 1fr); gap: 10px; }
   .chemistry-views { gap: 10px; }
   .chemistry-views button { font-size: 11px; }
   .chemistry-footer { gap: 3px 12px; }
