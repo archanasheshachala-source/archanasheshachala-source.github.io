@@ -25,7 +25,7 @@ window.researchTopics = {
     "paperHref": "#paper-star",
     "paperLabel": "Publication details",
     "paperId": "paper-star",
-    "collaboration": "Collaborative work with Penn State, USA.",
+    "collaboration": "Collaborative work with Pennsylvania State University (Penn State), USA.",
     "diagramLayers": [
       {
         "kind": "electrode",
@@ -68,7 +68,7 @@ window.researchTopics = {
     "paperHref": "https://doi.org/10.1002/cplu.202500124",
     "paperLabel": "Read the paper",
     "paperId": "paper-pyrazine",
-    "collaboration": "Collaborative work with Penn State, USA.",
+    "collaboration": "Collaborative work with Pennsylvania State University (Penn State), USA.",
     "diagramLayers": [
       {
         "kind": "electrode",
