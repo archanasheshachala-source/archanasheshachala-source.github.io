@@ -4,11 +4,10 @@ window.researchTopics = {
   "star": {
     "question": "19.24% efficiency with a dopant-free hole-transport material",
     "context": "Carbazole–triphenylamine hybrids · First author · Carbon Energy, accepted",
-    "summary": "I designed star-shaped carbazole–triphenylamine materials for hole extraction without added dopants.",
-    "contributionLabel": "My contribution:",
+    "summary": "This study compares SS1 and SS2 to examine how methoxy substitution affects hole transport.",
     "contribution": "Molecular design and synthesis, initial device fabrication, and experimental and theoretical analysis linking molecular structure with charge transport and device performance.",
     "focus": "transport",
-    "diagramCaption": "MAPbI₃ and mixed-cation absorbers tested. Device structure; layer thicknesses are illustrative.",
+    "diagramCaption": "Device structure; layer thicknesses are illustrative.",
     "evidenceSummary": "Unencapsulated SS1 cells retained >91% of their initial efficiency after 1,500 h of storage (~28 °C, ~65% relative humidity).",
     "comparisonLabel": "SS1 power conversion efficiency",
     "comparisonColumn": "Device configuration",
@@ -23,7 +22,6 @@ window.researchTopics = {
       }
     ],
     "evidenceNote": "In matched MAPbI₃ cells (~0.096 cm²), dopant-free SS1 (17.73%) and SS2 (16.68%) exceeded undoped Spiro-OMeTAD (15.76%).",
-    "methods": "Organic synthesis · Spectroscopy · Device fabrication · DFT/TD-DFT",
     "paperHref": "#paper-star",
     "paperLabel": "Publication details",
     "paperId": "paper-star",
@@ -59,16 +57,14 @@ window.researchTopics = {
   "pyrazine": {
     "question": "Pyrazine: an underexplored core for hole transport",
     "context": "Pyrazine-derived materials · First author · ChemPlusChem, 2025",
-    "summary": "I designed pyrazine-based materials to study hole extraction and nitrogen–lead interaction at the perovskite surface.",
-    "contributionLabel": "My contribution:",
+    "summary": "PS1 and PS2 pair a pyrazine core with electron-donating groups.",
     "contribution": "Design and synthesis of pyrazine-derived materials, with experimental and theoretical analysis of their interfacial behaviour.",
     "focus": "interface",
-    "diagramCaption": "PS1 / PS2 directly contact MAPbI₃. Device structure; layer thicknesses are illustrative.",
-    "evidenceSummary": "Interaction experiments, spectroscopy, and modelling supported nitrogen–lead interaction and a role in charge transfer. The devices showed moderate efficiency.",
+    "diagramCaption": "Device structure; layer thicknesses are illustrative.",
+    "evidenceSummary": "PbI₂ titration supported nitrogen–lead interactions, while photoluminescence measurements probed charge transfer at the perovskite contact.",
     "comparisonLabel": "",
     "comparisonRows": [],
     "evidenceNote": "",
-    "methods": "Organic synthesis · PbI₂ interaction studies · Photophysics · Theoretical modelling",
     "paperHref": "https://doi.org/10.1002/cplu.202500124",
     "paperLabel": "Read the paper",
     "paperId": "paper-pyrazine",
@@ -99,16 +95,15 @@ window.researchTopics = {
         "label": "Glass substrate"
       }
     ],
-    "practicalContext": "Pyrazine-based materials offer design insights for combining hole extraction with surface interaction in future perovskite devices."
+    "practicalContext": ""
   },
   "pyridine": {
     "question": "Can a spiro-free molecule approach the benchmark’s performance?",
     "context": "PyCNEdTp · Co-author · Chemical Communications, 2026",
-    "summary": "In this co-authored study, we explored PyCNEdTp, a spiro-free donor–acceptor–donor material built around a dicyanopyridine core.",
-    "contributionLabel": "My contribution:",
-    "contribution": "Material synthesis, manuscript review and editing, as part of the collaboration.",
+    "summary": "PyCNEdTp uses a dicyanopyridine core in place of a spiro junction.",
+    "contribution": "Material synthesis; manuscript review and editing.",
     "focus": "architecture",
-    "diagramCaption": "PEAI-treated surface beneath PyCNEdTp. Device structure; layer thicknesses are illustrative.",
+    "diagramCaption": "Device structure; layer thicknesses are illustrative.",
     "evidenceSummary": "",
     "comparisonLabel": "Power conversion efficiency · n-i-p solar cells",
     "comparisonRows": [
@@ -122,7 +117,6 @@ window.researchTopics = {
       }
     ],
     "evidenceNote": "",
-    "methods": "Study methods: DFT · Spectroscopy · GIWAXS · Device characterisation",
     "paperHref": "https://doi.org/10.1039/D6CC01269H",
     "paperLabel": "Read the paper",
     "paperId": "paper-pyridine",
@@ -157,6 +151,6 @@ window.researchTopics = {
         "label": "Glass substrate"
       }
     ],
-    "practicalContext": "PyCNEdTp matches the Spiro-OMeTAD benchmark with a spiro-free design, offering another route for future hole-transport materials."
+    "practicalContext": ""
   }
 };

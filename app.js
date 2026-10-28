@@ -17,9 +17,9 @@
   const tabs = [...document.querySelectorAll("[data-topic]")];
   const topics = window.researchTopics;
   let currentTopic = "star";
-  const requiredFields = ["question", "context", "collaboration", "summary", "contributionLabel",
+  const requiredFields = ["question", "context", "collaboration", "summary",
     "contribution", "focus", "diagramCaption", "evidenceSummary",
-    "comparisonLabel", "evidenceNote", "methods", "paperHref",
+    "comparisonLabel", "evidenceNote", "paperHref",
     "paperLabel", "paperId"];
   const validTopics = topics && tabs.every(tab => {
     const topic = topics[tab.dataset.topic];
@@ -42,14 +42,13 @@
     setText("research-context", topic.context);
     setText("research-collaboration", topic.collaboration);
     setText("research-summary", topic.summary);
-    setText("contribution-label", topic.contributionLabel);
     setText("research-contribution", topic.contribution);
+    setText("research-detail-label", topic.practicalContext ? "Contribution & relevance" : "My contribution");
     setText("diagram-caption", topic.diagramCaption);
     setText("research-evidence-summary", topic.evidenceSummary);
     setText("research-comparison-label", topic.comparisonLabel);
     setText("research-comparison-column", topic.comparisonColumn || "Material");
     setText("research-evidence-note", topic.evidenceNote);
-    setText("research-methods", topic.methods);
     setText("research-relevance-copy", topic.practicalContext || "");
     if ($("research-relevance")) $("research-relevance").hidden = !topic.practicalContext;
 

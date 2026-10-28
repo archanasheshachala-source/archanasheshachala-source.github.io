@@ -502,13 +502,6 @@ svg {
   line-height: 1.75;
 }
 
-#research-methods {
-  margin-block: 12px 0;
-  color: var(--secondary);
-  font-size: 12px;
-  line-height: 1.7;
-}
-
 .research-relevance { margin-block: 14px; color: var(--secondary); font-size: 13px; line-height: 1.75; }
 .research-relevance strong { color: var(--ink); font-weight: 500; }
 
@@ -899,7 +892,7 @@ summary::marker {
 
 .expertise dl > div {
   display: grid;
-  grid-template-columns: 70px minmax(0, 1fr);
+  grid-template-columns: 108px minmax(0, 1fr);
   gap: 12px;
   margin-block: 10px;
   font-size: 13px;
@@ -1166,7 +1159,7 @@ footer a {
   .paper-details > summary { margin-top: 0; }
   .experience-row { gap: 14px; }
   .experience-row--compact { padding-block: 7px; }
-  .expertise dl > div { grid-template-columns: 60px minmax(0, 1fr); gap: 10px; }
+  .expertise dl > div { grid-template-columns: 104px minmax(0, 1fr); gap: 10px; }
   .email-link { font-size: 15px; }
   .contact-links { gap: 0 17px; }
   footer { flex-wrap: wrap; gap: 4px 12px; }
